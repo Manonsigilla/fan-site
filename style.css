@@ -28,13 +28,25 @@ RESET CSS - Remise à zéro des styles
     box-sizing: border-box; /* Inclut padding et border dans la largeur/hauteur */
 }
 
-body {
+h1, h2, .intro__title, .news__title {
     font-family: var(--font-primary);
 }
+h1, h2 {
+    margin-bottom: 20px;
+    color: var(--color-om-gold);
+    text-align: center;
+    font-size: 56px;
+    font-weight: 400;
+    padding-top: 20px;
+}
 
-/* Empêcher le scroll quand le menu mobile est ouvert */
-body.menu-open {
-    overflow: hidden;
+p, a, span, div {
+    font-family: var(--font-secondary);
+}
+main {
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
 }
 
 /* ============================================
@@ -42,11 +54,7 @@ HEADER - En-tête principal du site
 ============================================ */
 header {
     position: relative;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 100px;
     padding: 30px 0;
     
     /* Image de fond avec overlay sombre pour la lisibilité */
@@ -58,7 +66,6 @@ header {
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Effet parallaxe */
-    
     min-height: 500px;
     width: 100%;
     overflow: hidden;
@@ -82,43 +89,19 @@ header::before {
 }
 
 /* ============================================
-HEADER TOP - Container pour H1 et Burger
+HEADER TOP - Container pour H1
 ============================================ */
 .header-top {
     display: flex;
     align-items: center;
     justify-content: center;
+    align-items: center;
+    gap: 80px;
+    min-height: 400px;
     width: 100%;
     position: relative;
+    padding: 50px 20px;
     z-index: 10;
-}
-
-/* ============================================
-LOGO MOBILE - Visible uniquement sur mobile
-============================================= */
-
-.logo-mobile {
-    display: none; /* Caché par défaut sur desktop */
-    transition: transform 0.3s ease;
-}
-
-.logo-mobile img {
-    height: 60px; /* Légèrement plus petit que sur desktop */
-    width: 60px;
-    background-color: var(--color-white);
-    border-radius: 50%; /* Logo circulaire */
-    padding: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-/* Effet au survol du logo mobile */
-.logo-mobile:hover {
-    transform: rotate(5deg) scale(1.05);
-}
-
-.logo-mobile img:hover {
-    box-shadow: 0 6px 25px var(--color-om-gold);
 }
 
 /* ============================================
@@ -128,8 +111,7 @@ header h1 {
     color: var(--color-white);
     font-size: clamp(1.8rem, 4vw, 3rem); /* Taille responsive */
     text-align: center;
-    font-family: var(--font-primary);
-    font-weight: 600;
+    font-weight: 800;
     letter-spacing: 1px;
     
     /* Effet de dégradé blanc → or sur le texte */
@@ -137,14 +119,20 @@ header h1 {
         135deg, 
         var(--color-white) 0%, 
         var(--color-om-gold) 100%
-    );
+        );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+.title-om {
+    display: flex;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    gap: 10px;
+    -webkit-backdrop-filter: blur(10px); /* Flou du fond derrière le texte pour Safari */
+    backdrop-filter: blur(10px); /* Flou du fond derrière le texte */
     
     padding: 15px 30px;
     border-radius: 10px;
-    backdrop-filter: blur(10px); /* Flou du fond derrière le texte */
     animation: fadeInDown 0.8s ease-out; /* Animation d'entrée */
     position: relative;
     z-index: 1;
@@ -162,40 +150,14 @@ header h1 {
     }
 }
 
-/* ============================================
-NAVIGATION DESKTOP - Visible uniquement > 768px
-============================================ */
-header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    max-width: 1200px;
-    z-index: 1;
-}
-
 /* Container du logo avec effet glassmorphism */
-header nav a.logo {
+.logo-mobile {
     transition: transform 0.3s ease;
     background: rgba(255, 255, 255, 0.05); /* Fond semi-transparent */
+    -webkit-backdrop-filter: blur(15px); /* Effet de verre dépoli pour Safari */
     backdrop-filter: blur(15px); /* Effet de verre dépoli */
-    padding: 15px 30px;
+    padding: 15px 15px;
     border-radius: 50px; /* Capsule arrondie */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    animation: fadeInUp 0.8s ease-out 0.2s backwards;
-    position: relative;
-}
-
-/* Liste des liens de navigation */
-header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-    padding: 15px 30px;
-    border-radius: 50px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     animation: fadeInUp 0.8s ease-out 0.2s backwards;
@@ -215,12 +177,12 @@ header nav ul {
 }
 
 /* Effet de rotation au survol du logo */
-header nav a.logo:hover {
+.logo-mobile:hover {
     transform: rotate(5deg) scale(1.05);
 }
 
 /* Styles de l'image du logo */
-header nav a.logo img {
+.logo-mobile img {
     height: 70px;
     background-color: var(--color-white);
     border-radius: 50%; /* Logo circulaire */
@@ -230,294 +192,125 @@ header nav a.logo img {
 }
 
 /* Ombre dorée au survol du logo */
-header nav a.logo img:hover {
+.logo-mobile img:hover {
     box-shadow: 0 6px 25px var(--color-om-gold);
 }
-
-header nav ul li {
-    position: relative;
-}
-
-/* Styles des liens de navigation */
-header nav ul li a {
-    display: inline-flex;
-    align-items: center;
-    color: var(--color-white);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: clamp(1.2rem, 2vw, 1.5rem);
-    font-family: var(--font-secondary);
-    padding: 12px 25px;
-    border-radius: 25px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transition fluide */
-    user-select: none; /* Empêche la sélection du texte */
-    position: relative;
-    overflow: hidden;
-}
-
-/* Effet de brillance qui traverse le lien au survol */
-header nav ul li a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%; /* Commence hors écran à gauche */
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        90deg, 
-        transparent, 
-        rgba(255, 255, 255, 0.2), 
-        transparent
-    );
-    transition: left 0.5s ease;
-}
-
-header nav ul li a:hover::before {
-    left: 100%; /* Se déplace vers la droite */
-}
-
-/* État hover des liens : fond bleu OM + élévation */
-header nav ul li a:hover {
-    color: var(--color-white);
-    background: var(--color-om-blue);
-    transform: translateY(-3px); /* Élévation */
-    box-shadow: 0 10px 25px rgba(0, 132, 255, 0.3);
-}
-
-/* État actif (clic) : légère élévation */
-header nav ul li a:active {
-    transform: translateY(-1px);
-}
-
-/* Bordure dorée animée sous les liens */
-header nav ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0; /* Commence invisible */
-    height: 2px;
-    background: var(--color-om-gold);
-    transition: width 0.3s ease;
-}
-
-/* La bordure s'élargit au survol */
-header nav ul li a:hover::after {
-    width: 60%;
-}
-
-/* ============================================
-MENU BURGER - Visible uniquement sur mobile
-============================================ */
-
-/* Bouton burger (maintenant un vrai bouton <button>) */
-.burger-menu {
-    position: fixed;
-    top: 5vh;
-    left: 5vw;
-    z-index: 200; /* Au-dessus de tout */
-    display: none; /* Caché par défaut (desktop) */
-    width: var(--burger-menu-radius);
-    height: var(--burger-menu-radius);
-    background: none;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 0;
-}
-
-/* Les 3 lignes du burger */
-.burger-menu .line {
-    position: absolute;
-    left: 25%;
-    width: 50%;
-    height: 3px;
-    background: var(--color-om-gold); /* Couleur or OM */
-    border-radius: 10px;
-    overflow: hidden;
-    transition: 0.5s;
-}
-
-/* Positionnement des 3 lignes */
-.burger-menu .line:nth-child(1) {
-    top: 30%;
-}
-
-.burger-menu .line:nth-child(2) {
-    top: 50%;
-}
-
-.burger-menu .line:nth-child(3) {
-    top: 70%;
-}
-
-/* Effet de brillance sur les lignes */
-.burger-menu .line::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--color-white);
-    transform: translateX(-100%); /* Commence hors écran */
-    transition: 0.25s;
-}
-
-/* Délais progressifs pour l'animation des lignes */
-.burger-menu .line:nth-child(2)::after {
-    transition-delay: 0.1s;
-}
-
-.burger-menu .line:nth-child(3)::after {
-    transition-delay: 0.2s;
-}
-
-/* Au survol : la brillance apparaît */
-.burger-menu:hover .line::after {
-    transform: translateX(0);
-}
-
-/* ============================================
-ANIMATION DU BURGER QUAND LE MENU EST OUVERT
-Utilise la classe .active ajoutée par JavaScript
-============================================ */
-
-/* Quand le burger a la classe 'active', les lignes brillent */
-.burger-menu.active .line::after {
-    transform: translateX(0);
-}
-
-/* Transformation en X : ligne du haut tourne à 45° */
-.burger-menu.active .line:nth-child(1) {
-    transform: translateY(calc(var(--burger-menu-radius) / 5)) rotate(45deg);
-}
-
-/* Ligne du milieu disparaît */
-.burger-menu.active .line:nth-child(2) {
-    transform: scaleX(0);
-}
-
-/* Ligne du bas tourne à -45° */
-.burger-menu.active .line:nth-child(3) {
-    transform: translateY(calc(var(--burger-menu-radius) / -5)) rotate(-45deg);
-}
-
-/* ============================================
-MENU OVERLAY - Menu plein écran sur mobile
-============================================ */
-.menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none; /* Caché par défaut (desktop) */
-    justify-content: center;
-    align-items: center;
-    
-    /* Dégradé de fond bleu OM → noir */
-    background: linear-gradient(135deg, var(--color-om-blue) 0%, var(--color-black) 100%);
-    
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-    z-index: 150; /* Sous le burger (z-index 200) */
-}
-
-/* Quand l'overlay a la classe 'active', il apparaît */
-.menu-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.menu-overlay-inner {
-    text-align: center;
-    width: 100%;
-}
-
-/* Liste des liens du menu overlay */
-.menu-overlay-nav {
+.header-top div {
     display: flex;
     flex-direction: column;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    gap: 20px;
+    align-items: center;
+    gap: 10px;
 }
-
-/* Container de chaque lien (pour l'animation) */
-.menu-overlay-item {
-    overflow: hidden; /* Cache le texte qui sort du cadre */
-}
-
-/* Styles des liens du menu overlay */
-.menu-overlay-link {
-    position: relative;
-    display: inline-block;
-    font-size: 2.5rem;
+.header-top p {
     color: var(--color-white);
-    text-decoration: none;
+    margin-top: 15px;
+    font-size: 1rem;
+    text-align: center;
+    max-width: 600px;
+    line-height: 1.4;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Contenu page index */
+
+/* Grille des mini-sites */
+.mini-sites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.mini-site-card {
+    background: var(--color-white);
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.mini-site-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.mini-site-card h3 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    color: var(--color-om-blue);
+    margin-bottom: 10px;
+}
+
+.mini-site-card p {
+    color: #666;
+    margin-bottom: 20px;
+    min-height: 48px;
     font-family: var(--font-secondary);
-    font-weight: 600;
-    padding: 10px 30px;
 }
 
-.menu-overlay-link span {
-    overflow: hidden;
-    display: block;
+.btn {
+    display: inline-block;
+    background: var(--color-om-gold-dark);
+    color: var(--color-white);
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
-/* Animation : le texte monte depuis le bas */
-.menu-overlay-link span div {
-    transform: translateY(102%); /* Commence en dessous */
-    transition: transform 1.2s 0.1s cubic-bezier(0.35, 0, 0.07, 1);
+.btn:hover {
+    background: var(--color-om-gold);
+    transform: scale(1.05);
 }
 
-/* Quand le menu est actif, le texte remonte */
-.menu-overlay.active .menu-overlay-link span div {
-    transform: translateY(0);
+.propos {
+    margin-top: 60px;
+    background: var(--color-white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.propos p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #666;
+    font-family: var(--font-secondary);
+    line-height: 1.6;
 }
 
 /* ============================================
-ANIMATION PROGRESSIVE DES LIENS (cascade)
+FOOTER - Pied de page du site
 ============================================ */
-.menu-overlay.active .menu-overlay-item:nth-child(1) .menu-overlay-link span div {
-    transition-delay: 0.1s;
-}
 
-.menu-overlay.active .menu-overlay-item:nth-child(2) .menu-overlay-link span div {
-    transition-delay: 0.2s;
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--color-om-blue);
+    color: var(--color-white);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 60px;
+    font-size: 0.9rem;
 }
-
-.menu-overlay.active .menu-overlay-item:nth-child(3) .menu-overlay-link span div {
-    transition-delay: 0.3s;
+footer p {
+    margin: 15px 0;
 }
-
-.menu-overlay.active .menu-overlay-item:nth-child(4) .menu-overlay-link span div {
-    transition-delay: 0.4s;
+footer a {
+    color: var(--color-om-gold);
+    text-decoration: none;
 }
-
-/* Bordure dorée animée sous les liens du menu */
-.menu-overlay-link::after {
-    position: absolute;
-    content: "";
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%) scaleX(0); /* Commence invisible */
-    width: 80%;
-    height: 3px;
-    background: var(--color-om-gold);
-    transform-origin: center;
-    transition: transform 0.5s;
-}
-
-/* Au survol, la bordure s'élargit */
-.menu-overlay-link:hover::after {
-    transform: translateX(-50%) scaleX(1);
+footer a:hover {
+    text-decoration: underline;
 }
 
 /* ============================================
@@ -547,34 +340,13 @@ RESPONSIVE - Adaptation mobile/desktop
         font-size: clamp(1.3rem, 5vw, 2rem);
         padding: 10px 20px;
     }
-
-    /* Afficher le burger menu en mobile */
-    .burger-menu {
-        display: block;
-    }
     
     /* Afficher le logo mobile */
     .logo-mobile {
         display: block;
         animation: fadeInUp 0.8s ease-out 0.3s backwards; /* Animation d'entrée */
     }
-    
-    /* Afficher le menu overlay en mobile */
-    .menu-overlay {
-        display: flex;
-    }
-
-    /* Cacher la navigation normale en mobile */
-    header nav {
-        display: none;
-    }
-}
-
-/* DESKTOP : écrans de plus de 768px */
-@media (min-width: 769px) {
-    /* S'assurer que le burger et l'overlay sont cachés sur desktop */
-    .burger-menu,
-    .menu-overlay {
-        display: none !important;
-    }
+    .mini-sites-grid {
+        grid-template-columns: 1fr;
+      }
 }

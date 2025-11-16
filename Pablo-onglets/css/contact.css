@@ -1,0 +1,232 @@
+/* ============================================
+   CONTACT.CSS - Page Contact & Formulaire
+   ============================================ */
+
+.contact {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.contact__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  padding: var(--spacing-lg);
+  border-radius: 4px;
+}
+
+/* 🎯 FORMULAIRE */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-weight: bold;
+  color: var(--color-black);
+  margin-bottom: 8px;
+}
+
+.form-required {
+  color: #d32f2f;
+}
+
+.form-optional {
+  color: var(--color-text-muted);
+  font-weight: normal;
+  font-size: 0.9rem;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  padding: 10px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-om-blue);
+  box-shadow: 0 0 0 3px rgba(39, 128, 227, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-hint {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+/* Checkbox */
+.form-group--checkbox {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.form-checkbox__input {
+  margin-top: 4px;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-om-blue);
+}
+
+.form-checkbox__label {
+  flex: 1;
+  line-height: 1.6;
+}
+
+.form-link {
+  color: var(--color-om-blue);
+  text-decoration: underline;
+  transition: color var(--transition-fast);
+}
+
+.form-link:hover {
+  color: var(--color-om-gold-dark);
+}
+
+/* Boutons */
+.form-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  margin-top: var(--spacing-md);
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--primary {
+  background-color: var(--color-om-blue);
+  color: var(--color-white);
+}
+
+.btn--primary:hover {
+  background-color: oklch(54% 0.14 237.44);
+}
+
+.btn--secondary {
+  background-color: #f5f5f5;
+  color: var(--color-black);
+}
+
+.btn--secondary:hover {
+  background-color: #e0e0e0;
+}
+
+/* 🎯 INFORMATIONS DE CONTACT */
+.contact-info {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: var(--spacing-lg);
+  border-radius: 4px;
+  border-left: 4px solid var(--color-om-blue);
+}
+
+.contact-info__title {
+  color: var(--color-om-blue);
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: var(--spacing-md);
+}
+
+.contact-info__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.contact-info__item:last-of-type {
+  border-bottom: none;
+}
+
+.contact-info__icon {
+  font-size: 1.5rem;
+  min-width: 30px;
+}
+
+.contact-info__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-info__content strong {
+  color: var(--color-om-blue);
+  font-size: 0.9rem;
+}
+
+.contact-info__content a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.contact-info__content a:hover {
+  color: var(--color-om-blue);
+  text-decoration: underline;
+}
+
+.contact-info__note {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background-color: rgba(255, 193, 7, 0.1);
+  border-left: 3px solid var(--color-om-gold);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.contact-info__note strong {
+  color: var(--color-om-blue);
+}
+
+/* 📱💻 RESPONSIVE CONTACT - TABLETTES & DESKTOP (≥ 768px) */
+@media (min-width: 768px) {
+  .contact__container {
+    grid-template-columns: 2fr 1fr;
+  }
+  
+  .form-actions {
+    justify-content: flex-start;
+  }
+}

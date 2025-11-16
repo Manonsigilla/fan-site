@@ -1,122 +1,81 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <title>OM fan page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fansite Olympique de Marseille - Le site des fans de l'OM">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <title>Fansite OM - Accueil</title>
 </head>
 <body>
-<header>
-        <!-- ============================================
-        Container pour le burger et le titre (mobile)
-        ============================================ -->
-        <div class="header-top">
-            <!-- Bouton burger : visible uniquement sur mobile (< 768px) -->
-            <button class="burger-menu" aria-label="Menu" aria-expanded="false">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </button>
-            
-            <!-- Logo : visible uniquement sur mobile (<768px) -->
-            <a href="/Index.html" class="logo-mobile">
-                <img src="/images/Image_20251106_131302_815.png" alt="logo OM">
-            </a>
-
-            <!-- Titre principal de la page -->
-            <h1>FanPage OM dédié à Steve Mandanda</h1>
+  
+  <header>
+    <div class="header-top">
+      <a href="/Index.html" class="logo-mobile">
+          <img src="/images/Image_20251106_131302_815.png" alt="logo OM">
+      </a>
+      <div>
+        <!-- Titre principal de la page -->
+        <div class="title-om">
+          <span>🔵⚪</span>
+          <h1>Fansite Olympique de Marseille</h1>
         </div>
+        <p>Le site des fans de l'OM par excellence</p>
+      </div>
+    </div>
+  </header>
+  
+  <main>
+    <section>
+      <h2>Découvrez Nos Mini-Sites</h2>
+      
+      <div class="mini-sites-grid">
         
-        <!-- ============================================
-        Menu overlay : s'affiche en plein écran sur mobile
-        ============================================ -->
-        <div class="menu-overlay">
-            <div class="menu-overlay-inner">
-                <ul class="menu-overlay-nav">
-                    <li class="menu-overlay-item">
-                        <a class="menu-overlay-link" href="/Index.html">
-                            <span><div>Accueil</div></span>
-                        </a>
-                    </li>
-                    <li class="menu-overlay-item">
-                        <a class="menu-overlay-link" href="/Pablo-onglets/Actualites.html">
-                            <span><div>Pablo</div></span>
-                        </a>
-                    </li>
-                    <li class="menu-overlay-item">
-                        <a class="menu-overlay-link" href="/Garcia-onglets/">
-                            <span><div>Garcia</div></span>
-                        </a>
-                    </li>
-                    <li class="menu-overlay-item">
-                        <a class="menu-overlay-link" href="/Mandanda-onglets/index.html">
-                            <span><div>Mandanda</div></span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <!-- Mini-site 1 : Pablo Longoria -->
+        <article class="mini-site-card">
+          <h3>Pablo Longoria</h3>
+          <p>Découvrez le parcours du président de l'OM, Pablo Longoria, et suivez son actualité.</p>
+          <a href="/Pablo-onglets/fansite1.html" class="btn">Découvrir →</a>
+        </article>
         
-        <!-- ============================================
-        Navigation desktop : visible uniquement > 768px
-        ============================================ -->
-        <nav>
-            <!-- Logo OM cliquable -->
-            <a href="/Index.html" class="logo">
-                <img src="/images/Image_20251106_131302_815.png" alt="logo OM">
-            </a>
-            
-            <!-- Liste des liens de navigation -->
-            <ul>
-                <li><a href="/Pablo-onglets/Actualites.html">Pablo</a></li>
-                <li><a href="/Garcia-onglets/">Garcia</a></li>
-                <li><a href="/Mandanda-onglets/index.html">Mandanda</a></li>
-            </ul>
-        </nav>
-    </header>
+        <!-- Mini-site 2  -->
+        <article class="mini-site-card">
+          <h3>Ulisses Garcia</h3>
+          <p>Découvrez le parcours du joueur Ulisses Garcia et suivez son actualité.</p>
+          <a href="/Garcia-onglets/fansite1.html" class="btn">Découvrir →</a>
+        </article>
+        
+        <!-- Mini-site 3  -->
+        <article class="mini-site-card">
+          <h3>Steve Mandanda</h3>
+          <p>Découvrez le parcours du joueur Steve Mandanda et suivez son actualité.</p>
+          <a href="/Mandanda-onglets/index.html" class="btn">Découvrir →</a>
+        </article>
+        
+      </div>
+    </section>
 
-    <!-- ============================================
-    Script JavaScript pour gérer le menu burger
-    ============================================ -->
-    <script>
-        // Récupération des éléments du DOM
-        const burgerMenu = document.querySelector('.burger-menu');
-        const menuOverlay = document.querySelector('.menu-overlay');
-        const body = document.body;
+    <section class="propos">
+      <h2>À Propos du Projet</h2>
+      <p>
+        Ce projet est un fansite collaboratif dédié à l'Olympique de Marseille. 
+        Chaque mini-site est développé par un membre de l'équipe et présente une thématique différente 
+        liée au club. Navigation intuitive, design responsive, et contenu riche sont au cœur de notre projet.
+      </p>
+    </section>
+  </main>
+  
+  <footer>
+    <h3>Projet Fansite OM</h3>
+    <p>Développé dans le cadre d'un projet académique à La Plateforme_</p>
+    <p>
+      Ce site est un projet étudiant non affilié à l'Olympique de Marseille. Pour plus d'informations, visitez le
+      <a href="https://www.om.fr" target="_blank" rel="noopener">Site officiel de l'OM</a>
+    </p>
+    <p>Copyright © 2025 - Tous droits réservés</p>
+  </footer>
 
-        // Fonction pour ouvrir/fermer le menu
-        burgerMenu.addEventListener('click', function() {
-            // Toggle (basculer) la classe 'active' sur le burger et l'overlay
-            burgerMenu.classList.toggle('active');
-            menuOverlay.classList.toggle('active');
-            
-            // Empêcher le scroll du body quand le menu est ouvert
-            body.classList.toggle('menu-open');
-            
-            // Accessibilité : mise à jour de l'attribut aria-expanded
-            const isExpanded = burgerMenu.classList.contains('active');
-            burgerMenu.setAttribute('aria-expanded', isExpanded);
-        });
-
-        // Fermer le menu quand on clique sur un lien (optionnel)
-        const menuLinks = document.querySelectorAll('.menu-overlay-link');
-        menuLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                burgerMenu.classList.remove('active');
-                menuOverlay.classList.remove('active');
-                body.classList.remove('menu-open');
-                burgerMenu.setAttribute('aria-expanded', 'false');
-            });
-        });
-    </script>
-    <body>
-        
-    </body>
-    <footer>
-        
-    </footer>
 </body>
 </html>

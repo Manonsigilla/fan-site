@@ -51,7 +51,6 @@
     text-align: center;
     font-family: var(--font-primary);
     font-size: 2.5rem;
-    color: var(--color-om-blue);
     margin-bottom: var(--space-medium);
 }
 
@@ -391,11 +390,11 @@
     font-size: 1.5rem;
 }
 
-.form-group {
+.form-group-merch {
     margin-bottom: var(--space-large);
 }
 
-.form-group label {
+.form-group-merch label {
     display: block;
     margin-bottom: var(--space-small);
     color: var(--color-black);
@@ -403,7 +402,7 @@
     font-family: var(--font-secondary);
 }
 
-.form-group input {
+.form-group-merch input {
     width: 100%;
     padding: var(--space-medium);
     border: 2px solid #ddd;
@@ -413,7 +412,7 @@
     transition: border-color 0.3s;
 }
 
-.form-group input:focus {
+.form-group-merch input:focus {
     outline: none;
     border-color: var(--color-om-blue);
 }

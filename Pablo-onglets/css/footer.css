@@ -4,7 +4,7 @@ footer {
         180deg, 
         rgba(0, 0, 0, 0.4) 0%, 
         rgba(0, 0, 0, 0.6) 100%
-    ), url(/Mandanda-onglets/images/67d5654e339bd16d0766f4d555269c92.jpg);
+    ), url("/Pablo-onglets/images/67d5654e339bd16d0766f4d555269c92\ \(1\).jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Effet parallaxe */
@@ -24,10 +24,10 @@ footer nav ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 40px;
     padding: 0;
     margin: 0;
+    justify-content: center;
 }
 
 footer nav a {
@@ -48,7 +48,6 @@ footer nav a:hover {
     border: 2px solid var(--color-om-gold);
     transition: transform 0.3s ease;
     background: var(--color-white);
-    -webkit-backdrop-filter: blur(15px); /* Effet de verre dépoli pour Safari */
     backdrop-filter: blur(15px); /* Effet de verre dépoli */
     border-radius: 50px; /* Capsule arrondie */
     animation: fadeInUp 0.8s ease-out 0.2s backwards;
@@ -58,7 +57,7 @@ footer nav a:hover {
     transform: scale(1.1);
 }
 
-// Responsive Footer
+/* // Responsive Footer */
 @media (max-width: 768px) {
     footer {
         height: auto;

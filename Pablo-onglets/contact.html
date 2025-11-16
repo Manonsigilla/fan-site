@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contactez le fansite dédié à Pablo Longoria - Olympique de Marseille">
+  <meta name="keywords" content="contact, Pablo Longoria, fansite OM, message">
+  <title>Contact - Fansite Pablo Longoria</title>
+  <link rel="stylesheet" href="/Pablo-onglets/css/fansite1.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <!-- ============================================
+    Container pour le burger et le titre (mobile)
+    ============================================ -->
+    <div class="header-top">
+      <!-- Bouton burger : visible uniquement sur mobile (< 768px) -->
+      <button class="burger-menu" aria-label="Menu" aria-expanded="false">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+      </button>
+
+      <!-- Logo : visible uniquement sur mobile (<768px) -->
+      <a href="/Index.html" class="logo-mobile">
+          <img src="/Pablo-onglets/images/logo.png" alt="logo OM">
+      </a>
+      <!-- Titre principal de la page -->
+      <h1>FanPage OM dédiée à Pablo Longoria</h1>
+    </div>
+
+    <!-- ============================================
+    Menu overlay : s'affiche en plein écran sur mobile
+    ============================================ -->
+
+    <div class="menu-overlay">
+      <div class="menu-overlay-inner">
+        <ul class="menu-overlay-nav">
+          <li class="menu-overlay-item">
+            <a href="/Pablo-onglets/fansite1.html" class="menu-overlay-link">
+              <span><div>Accueil</div></span>
+            </a>
+          </li>
+          <li class="menu-overlay-item">
+            <a href="/Pablo-onglets/actualite.html" class="menu-overlay-link">
+              <span><div>Actualité</div></span>
+            </a>
+          </li>
+          <li class="menu-overlay-item">
+            <a href="/Pablo-onglets/biographie.html" class="menu-overlay-link">
+              <span><div>Biographie</div></span>
+            </a>
+          </li>
+          <li class="menu-overlay-item">
+            <a href="/Pablo-onglets/evenements.html" class="menu-overlay-link">
+              <span><div>Événements</div></span>
+            </a>
+          </li>
+          <li class="menu-overlay-item">
+            <a href="/Pablo-onglets/chronologie.html" class="menu-overlay-link">
+              <span><div>Chronologie</div></span>
+            </a>
+          </li>
+          <li class="menu-overlay-item">
+            <a href="/Pablo-onglets/videos.html" class="menu-overlay-link">
+              <span><div>Vidéos</div></span>
+            </a>
+          </li>
+          <li class="menu-overlay-item">
+            <a href="/Pablo-onglets/contact.html" class="menu-overlay-link">
+              <span><div>Contact</div></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============================================
+    Navigation desktop : visible uniquement > 768px
+    ============================================ -->
+    <nav>
+      <!-- Logo OM cliquable -->
+      <a href="/Index.html" class="logo">
+        <img src="/Pablo-onglets/images/logo.png" alt="logo OM">
+      </a>
+
+      <!-- Liste des liens de navigation -->
+      <ul>
+        <li><a href="/Pablo-onglets/fansite1.html">Accueil</a></li>
+        <li><a href="/Pablo-onglets/actualite.html">Actualité</a></li>
+        <li><a href="/Pablo-onglets/biographie.html">Biographie</a></li>
+        <li><a href="/Pablo-onglets/evenements.html">Événements</a></li>
+        <li><a href="/Pablo-onglets/chronologie.html">Chronologie</a></li>
+        <li><a href="/Pablo-onglets/videos.html">Vidéos</a></li>
+        <li><a href="/Pablo-onglets/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="main" role="main">
+    
+    <!-- Section Intro -->
+    <section class="intro">
+      <h2 class="intro__title">Contactez-nous</h2>
+      <p class="intro__text">
+        Vous avez une question, une suggestion, ou souhaitez contribuer au fansite ? 
+        N'hésitez pas à nous contacter via le formulaire ci-dessous.
+      </p>
+    </section>
+    <!-- ⚠️⚠️⚠️ ATtention si je remplis le formulaire et que j'envoie, j'arrive sur une page erreur et je suis obligée de revenir en arrière, ajoute une confirmation d'envoi et une réinitialisation du formulaire automatique ⚠️⚠️⚠️ -->
+    <!-- Formulaire de contact -->
+    <section class="contact">
+      <div class="contact__container">
+        
+        <form class="contact-form" action="#" method="POST" id="contactForm">
+          
+          <!-- Champ Nom -->
+          <div class="form-group">
+            <label for="name" class="form-label">
+              Nom complet <span class="form-required">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              class="form-input" 
+              placeholder="Votre nom et prénom"
+              required
+              aria-required="true"
+            >
+          </div>
+
+          <!-- Champ Email -->
+          <div class="form-group">
+            <label for="email" class="form-label">
+              Email <span class="form-required">*</span>
+            </label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              class="form-input" 
+              placeholder="votre.email@exemple.com"
+              required
+              aria-required="true"
+            >
+          </div>
+
+          <!-- Champ Téléphone (optionnel) -->
+          <div class="form-group">
+            <label for="phone" class="form-label">
+              Téléphone <span class="form-optional">(optionnel)</span>
+            </label>
+            <input 
+              type="tel" 
+              id="phone" 
+              name="phone" 
+              class="form-input" 
+              placeholder="06 12 34 56 78"
+            >
+          </div>
+
+          <!-- Champ Sujet -->
+          <div class="form-group">
+            <label for="subject" class="form-label">
+              Sujet <span class="form-required">*</span>
+            </label>
+            <select 
+              id="subject" 
+              name="subject" 
+              class="form-select"
+              required
+              aria-required="true"
+            >
+              <option value="">-- Choisissez un sujet --</option>
+              <option value="question">Question générale</option>
+              <option value="suggestion">Suggestion d'amélioration</option>
+              <option value="contribution">Proposition de contribution</option>
+              <option value="erreur">Signaler une erreur</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+
+          <!-- Champ Message -->
+          <div class="form-group">
+            <label for="message" class="form-label">
+              Message <span class="form-required">*</span>
+            </label>
+            <textarea 
+              id="message" 
+              name="message" 
+              class="form-textarea" 
+              rows="6"
+              placeholder="Écrivez votre message ici..."
+              required
+              aria-required="true"
+            ></textarea>
+            <small class="form-hint">Minimum 10 caractères</small>
+          </div>
+
+          <!-- Checkbox Newsletter -->
+          <div class="form-group form-group--checkbox">
+            <label class="form-checkbox">
+              <input 
+                type="checkbox" 
+                id="newsletter" 
+                name="newsletter"
+                class="form-checkbox__input"
+              >
+              <span class="form-checkbox__label">
+                Je souhaite recevoir les actualités du fansite par email
+              </span>
+            </label>
+          </div>
+
+          <!-- RGPD -->
+          <div class="form-group form-group--checkbox">
+            <label class="form-checkbox">
+              <input 
+                type="checkbox" 
+                id="rgpd" 
+                name="rgpd"
+                class="form-checkbox__input"
+                required
+                aria-required="true"
+              >
+              <span class="form-checkbox__label">
+                J'accepte que mes données soient utilisées pour répondre à ma demande 
+                <span class="form-required">*</span>
+              </span>
+            </label>
+            <small class="form-hint">
+              Vos données ne seront jamais partagées avec des tiers. 
+              Consultez notre <a href="#" class="form-link">politique de confidentialité</a>.
+            </small>
+          </div>
+
+          <!-- Boutons -->
+          <div class="form-actions">
+            <button type="submit" class="btn btn--primary">
+              Envoyer le message
+            </button>
+            <button type="reset" class="btn btn--secondary">
+              Réinitialiser
+            </button>
+          </div>
+
+        </form>
+
+        <!-- Informations de contact alternatives -->
+        <aside class="contact-info">
+          <h3 class="contact-info__title">Autres moyens de contact</h3>
+          
+          <div class="contact-info__item">
+            <span class="contact-info__icon">📧</span>
+            <div class="contact-info__content">
+              <strong>Email</strong>
+              <a href="/cdn-cgi/l/email-protection#34575b5a405557407452555a475d405119585b5a535b465d551a575b59"><span class="__cf_email__" data-cfemail="dab9b5b4aebbb9ae9abcbbb4a9b3aebff7b6b5b4bdb5a8b3bbf4b9b5b7">[email&#160;protected]</span></a>
+            </div>
+          </div>
+
+          <div class="contact-info__item">
+            <span class="contact-info__icon">🐦</span>
+            <div class="contact-info__content">
+              <strong>Twitter</strong>
+              <a href="https://twitter.com/fansite_longoria" target="_blank" rel="noopener">@fansite_longoria</a>
+            </div>
+          </div>
+
+          <div class="contact-info__item">
+            <span class="contact-info__icon">📱</span>
+            <div class="contact-info__content">
+              <strong>Instagram</strong>
+              <a href="https://instagram.com/fansite_longoria" target="_blank" rel="noopener">@fansite_longoria</a>
+            </div>
+          </div>
+
+          <div class="contact-info__note">
+            <p>
+              <strong>Note :</strong> Ce fansite est indépendant et non affilié à l'Olympique de Marseille. 
+              Pour contacter officiellement le club ou Pablo Longoria, rendez-vous sur 
+              <a href="https://www.om.fr" target="_blank" rel="noopener">om.fr</a>.
+            </p>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <nav>
+      <!-- Logo OM cliquable -->
+      <a href="/Index.html" class="logo-footer">
+        <img src="/Pablo-onglets/images/logo.png" alt="logo OM">
+      </a>
+
+      <!-- Liste des liens de navigation -->
+      <ul>
+        <li><a href="/Pablo-onglets/fansite1.html">Accueil</a></li>
+        <li><a href="/Pablo-onglets/actualite.html">Actualité</a></li>
+        <li><a href="/Pablo-onglets/biographie.html">Biographie</a></li>
+        <li><a href="/Pablo-onglets/evenements.html">Événements</a></li>
+        <li><a href="/Pablo-onglets/chronologie.html">Chronologie</a></li>
+        <li><a href="/Pablo-onglets/videos.html">Vidéos</a></li>
+        <li><a href="/Pablo-onglets/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <!-- ============================================
+  Script JavaScript pour gérer le menu burger
+  ============================================ -->
+  <script>
+      // Récupération des éléments du DOM
+      const burgerMenu = document.querySelector('.burger-menu');
+      const menuOverlay = document.querySelector('.menu-overlay');
+      const body = document.body;
+
+      // Fonction pour ouvrir/fermer le menu
+      burgerMenu.addEventListener('click', function() {
+          // Toggle (basculer) la classe 'active' sur le burger et l'overlay
+          burgerMenu.classList.toggle('active');
+          menuOverlay.classList.toggle('active');
+          
+          // Empêcher le scroll du body quand le menu est ouvert
+          body.classList.toggle('menu-open');
+          
+          // Accessibilité : mise à jour de l'attribut aria-expanded
+          const isExpanded = burgerMenu.classList.contains('active');
+          burgerMenu.setAttribute('aria-expanded', isExpanded);
+      });
+
+      // Fermer le menu quand on clique sur un lien (optionnel)
+      const menuLinks = document.querySelectorAll('.menu-overlay-link');
+      menuLinks.forEach(link => {
+          link.addEventListener('click', function() {
+              burgerMenu.classList.remove('active');
+              menuOverlay.classList.remove('active');
+              body.classList.remove('menu-open');
+              burgerMenu.setAttribute('aria-expanded', 'false');
+          });
+      });
+  </script>
+
+</body>
+</html>

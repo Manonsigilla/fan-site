@@ -1,0 +1,333 @@
+/* ============================================
+CHRONOLOGIE.CSS - Page Chronologie Interactive
+============================================ */
+
+.main--chrono {
+  padding: var(--spacing-lg) 10px;
+}
+
+.intro--chrono {
+  max-width: var(--container-max-width);
+  margin: 0 auto var(--spacing-xl);
+}
+
+/* 🎯 FRISE CHRONOLOGIQUE CIRCULAIRE */
+.cards-container {
+  --items: 6;
+  --radius: 40vw;
+  --base-rotation: 0deg;
+  --full-circle: 360deg;
+  --duration: 800ms;
+  --label-size: 30px;
+  --label-dot-size: 8px;
+  --label-offset: calc(var(--radius) + var(--label-size) / 2);
+  --label-line-h: 0;
+  --label-line-h-current: 2rem;
+  --label-color: var(--color-om-blue);
+  --label-color-hover: var(--color-om-gold-dark);
+  --title-top: 2rem;
+  --info-top: 5rem;
+  --info-width: 85%;
+  --cards-container-padding: 2rem;
+  
+  container-type: inline-size;
+  min-height: calc(var(--radius) * 2 + 250px);
+  display: grid;
+  place-content: center;
+  margin: var(--spacing-xl) auto;
+  position: relative;
+}
+
+.cards {
+  --index: 0;
+  list-style: none;
+  margin: 0;
+  padding: var(--cards-container-padding);
+  width: calc(var(--radius) * 2);
+  height: calc(var(--radius) * 2);
+  position: relative;
+  transition: transform var(--duration) ease-in-out;
+  transform: rotate(calc(var(--base-rotation) - (var(--index) * var(--full-circle) / var(--items))));
+}
+
+.cards li {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+  transform-origin: center;
+  display: grid;
+  place-content: center;
+  transform: rotate(calc(var(--i) * 360deg / var(--items)));
+  pointer-events: none;
+}
+
+.cards li > input[type="radio"] {
+  display: none;
+}
+
+.cards li > label {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  transform: translateY(var(--label-offset));
+  width: var(--label-size);
+  height: var(--label-size);
+  cursor: pointer;
+  pointer-events: initial;
+  text-align: center;
+  color: var(--label-color);
+  font-size: clamp(0.8rem, 2.5vw + 0.04rem, 1rem);
+  font-weight: bold;
+  transition: var(--duration) ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards li > label::before {
+  content: '';
+  position: absolute;
+  top: var(--cards-container-padding);
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--label-dot-size);
+  height: var(--label-dot-size);
+  border-radius: 50%;
+  background-color: var(--label-color);
+  transition: background-color var(--duration) ease-in-out;
+}
+
+.cards li > label::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 5px);
+  width: 2px;
+  height: var(--label-line-h);
+  background-color: var(--color-om-gold);
+  transition: height 300ms ease-in-out var(--label-line-delay, 0ms);
+}
+
+.cards li > label:hover {
+  --label-color: var(--label-color-hover);
+  transform: translateY(var(--label-offset)) scale(1.1);
+}
+
+.cards > li > h2 {
+  position: absolute;
+  left: 50%;
+  top: var(--title-top);
+  text-align: center;
+  transform: translate(-50%, 0);
+  opacity: var(--title-opacity, 0);
+  transition: var(--duration) ease-in-out var(--title-delay, 0ms);
+  color: var(--color-om-blue);
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.cards > li > p {
+  position: absolute;
+  left: 50%;
+  top: var(--info-top);
+  text-align: center;
+  transform: translate(-50%, 0);
+  margin: 0 auto;
+  width: var(--info-width);
+  z-index: 2;
+  font-size: clamp(0.8rem, 2.5vw + 0.05rem, 0.9rem);
+  text-align: left;
+  line-height: 1.7;
+  opacity: var(--info-opacity, 0);
+  transition: var(--duration) ease-in-out var(--info-delay, 0ms);
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  border-left: 4px solid var(--color-om-blue);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+li:has(input:checked) {
+  --label-color: var(--color-om-gold);
+  --label-line-h: var(--label-line-h-current);
+  --label-line-delay: calc(var(--duration) * 2);
+  --title-opacity: 1;
+  --title-offset-y: 0;
+  --title-delay: calc(var(--duration) * 3);
+  --info-opacity: 1;
+  --info-offset-y: 0;
+  --info-delay: calc(var(--duration) * 4);
+}
+
+.cards:has(input:checked) {
+  transform: rotate(calc(var(--base-rotation) - (var(--index) * var(--full-circle) / var(--items))));
+}
+
+/* Index pour rotation - sélecteurs pour chaque année */
+.cards:has(li:nth-child(1) > input:checked) { --index: 0; }
+.cards:has(li:nth-child(2) > input:checked) { --index: 1; }
+.cards:has(li:nth-child(3) > input:checked) { --index: 2; }
+.cards:has(li:nth-child(4) > input:checked) { --index: 3; }
+.cards:has(li:nth-child(5) > input:checked) { --index: 4; }
+.cards:has(li:nth-child(6) > input:checked) { --index: 5; }
+.cards:has(li:nth-child(7) > input:checked) { --index: 6; }
+.cards:has(li:nth-child(8) > input:checked) { --index: 7; }
+.cards:has(li:nth-child(9) > input:checked) { --index: 8; }
+.cards:has(li:nth-child(10) > input:checked) { --index: 9; }
+
+/* Style inline pour garantir que la chronologie fonctionne */
+.timeline {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #2780e3 0%, #ffc107 100%);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  margin-bottom: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.timeline-item:nth-child(odd) {
+  padding-right: calc(50% + 30px);
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+  padding-left: calc(50% + 30px);
+  text-align: left;
+}
+
+.timeline-year {
+  display: inline-block;
+  background: #2780e3;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-year:hover {
+  background: #ffc107;
+  color: #333;
+  transform: scale(1.1);
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #2780e3;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.timeline-item.active .timeline-content {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 15px;
+}
+
+.timeline-item.active .timeline-year {
+  background: #ffc107;
+  color: #333;
+}
+
+.timeline-content h3 {
+  color: #2780e3;
+  margin: 0 0 10px 0;
+  font-size: 1.3rem;
+}
+
+.timeline-content p {
+  margin: 10px 0;
+  line-height: 1.7;
+  color: #333;
+}
+
+.timeline-content strong {
+  color: #2780e3;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 4px solid #2780e3;
+  border-radius: 50%;
+  z-index: 3;
+  transition: all 0.3s;
+}
+
+.timeline-item.active .timeline-dot {
+  background: #ffc107;
+  border-color: #ffc107;
+  transform: translateX(-50%) scale(1.3);
+}
+
+/* 📱💻 RESPONSIVE CHRONOLOGIE - TABLETTES & DESKTOP (≥ 768px) */
+@media (min-width: 768px) {
+  .cards-container {
+    --radius: 20vw;
+    --label-size: 35px;
+    --label-dot-size: 12px;
+    --label-line-h-current: 3rem;
+    --title-top: 3rem;
+    --info-top: 6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+  
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    padding-left: 50px;
+    padding-right: 10px;
+    text-align: left;
+  }
+  
+  .timeline-dot {
+    left: 20px;
+  }
+}
+
+/* 🖥️ RESPONSIVE CHRONOLOGIE - TRÈS GRANDS ÉCRANS (≥ 1200px) */
+@media (min-width: 1200px) {
+  .cards-container {
+    --radius: 18vw;
+    --label-size: 40px;
+  }
+}

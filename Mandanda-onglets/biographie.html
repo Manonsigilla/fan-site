@@ -122,6 +122,8 @@
         </nav>
 
     </footer>
+     <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/820b23ac92.js" crossorigin="anonymous"></script>
     <script>
         /* =====================================
         Script JavaScript pour gérer le menu burger
@@ -162,7 +164,7 @@
         const events = [
             {
                 time: "1985",
-                icon: 'debut',
+                icon: 'fa-baby', // Icône bébé
                 headline: 'Naissance et <span class="important">Débuts</span>',
                 paragraphs: [
                     '<h3>Les origines</h3>',
@@ -171,7 +173,7 @@
             },
             {
                 time: "1995",
-                icon: 'om',
+                icon: 'fa-futbol', // Ballon de foot
                 headline: 'Commence au club des jeunes à l\'ALM Évreux',
                 paragraphs: [
                     '<h3>Le commencement</h3>',
@@ -181,7 +183,7 @@
             },
             {
                 time: "2000",
-                icon: 'trophee',
+                icon: 'fa-hands', // Mains de gardien
                 headline: 'Premier gros tremplin',
                 paragraphs: [
                     '<h3>Le Havre</h3>',
@@ -191,7 +193,7 @@
             },
             {
                 time: "2007",
-                icon: 'france',
+                icon: 'fa-circle-o', // O de l'OM
                 headline: 'OM',
                 paragraphs: [
                     '<h3>Arrivée à l\'OM</h3>',
@@ -201,7 +203,7 @@
             },
             {
                 time: "2008",
-                icon: 'france',
+                icon: 'fa-flag', // Drapeau France
                 headline: 'équipe de France et le Havre',
                 paragraphs: [
                     '<h3>Équipe de France et prêt au Havre</h3>',
@@ -212,7 +214,7 @@
             },
             {
                 time: "2010",
-                icon: 'om',
+                icon: 'fa-trophy', // Trophée
                 headline: 'Coupe de la Ligue',
                 paragraphs: [
                     '<h3>Coupe de la Ligue</h3>',
@@ -222,7 +224,7 @@
             },
             {
                 time: "2011",
-                icon: 'om',
+                icon: 'fa-trophy', // Trophée
                 headline: 'Coupe de la ligue et gardien de la saison',
                 paragraphs: [
                     '<h3>Deuxième Coupe de la Ligue</h3>',
@@ -232,7 +234,7 @@
             },
             {
                 time: "2013",
-                icon: 'om',
+                icon: 'fa-crown', // Couronne de champion
                 headline: 'Titre de champion de France',
                 paragraphs: [
                     '<h3>Titre de champion de France</h3>',
@@ -242,7 +244,7 @@
             },
             {
                 time: "2016",
-                icon: 'angleterre',
+                icon: 'fa-plane-departure', // Avion (départ)
                 headline: 'Crystal Palace',
                 paragraphs: [
                     '<h3>Expérience en Premier League</h3>',
@@ -252,7 +254,7 @@
             },
             {
                 time: "2018",
-                icon: 'france',
+                icon: 'fa-medal', // Médaille
                 headline: 'Coupe du Monde 2018',
                 paragraphs: [
                     '<h3>Champion du Monde</h3>',
@@ -262,7 +264,7 @@
             },
             {
                 time: "2021",
-                icon: 'om',
+                icon: 'fa-chart-line', // Graphique (records)
                 headline: 'Retour à l\'OM et records',
                 paragraphs: [
                     '<h3>Retour à l\'OM</h3>',
@@ -272,7 +274,7 @@
             },
             {
                 time: "2023",
-                icon: 'om',
+                icon: 'fa-star', // Étoile
                 headline: 'Légende vivante de l\'OM',
                 paragraphs: [
                     '<h3>Légende vivante</h3>',
@@ -282,7 +284,7 @@
             },
             {
                 time: "2025",
-                icon: 'om',
+                icon: 'fa-heart', // Cœur
                 headline: 'Fin de carrière et héritage',
                 paragraphs: [
                     '<h3>Fin de carrière</h3>',
@@ -326,13 +328,15 @@
             // Ajout de tous les paragraphes de contenu
             for (const para of paragraphs) {
                 const pg = document.createElement("p");
-                pg.innerHTML = para; // innerHTML permet d'inclure du HTML dans le texte
+                pg.innerHTML = para;
                 eventText.append(pg);
             }
             
-            // Ajout de la classe d'icône si elle est fournie
+            // Ajout de l'icône Font Awesome
             if (icon != null) {
-                event.classList.add(icon);
+                const iconElement = document.createElement("i");
+                iconElement.classList.add("fas", icon, "event__icon"); // Ajout des classes Font Awesome
+                event.appendChild(iconElement);
             }
 
             // Attribution de la date comme attribut data

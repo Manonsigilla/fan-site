@@ -1,0 +1,110 @@
+/* ============================================
+BASE.CSS - Variables, Reset & Typographie
+============================================ */
+
+/* 🎨 VARIABLES CSS */
+:root {
+  /* Couleurs OM */
+  --color-om-blue: oklch(64.14% 0.14096247183780242 237.44293354297707);
+  --color-om-gold: oklch(73.26% 0.102 86.07);
+  --color-om-gold-dark: oklch(50.2% 0.102 86.07);
+  --color-white: oklch(100% 0 0);
+  --color-black: oklch(31.7% 0.102 86.07);
+  --color-bg-light: #F7F7F7;
+  --color-text-muted: #666666;
+
+  /* Polices de caractères */
+  --font-primary: 'Poppins', sans-serif;      /* Titres */
+  --font-secondary: 'Montserrat', sans-serif; /* Navigation */
+  
+  /* Taille du menu burger */
+  --burger-menu-radius: 4em;
+  
+  /* Espacements */
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 40px;
+  --spacing-xl: 40px;
+  
+  /* Tailles de police */
+  --font-size-h2: 1.3rem;
+  
+  /* Autres */
+  --transition-fast: 0.3s ease;
+  --container-max-width: 900px;
+}
+
+/* 🎯 RESET & BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url('/images/orangevelodrome_0.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: var(--font-secondary);
+  color: var(--color-black);
+  line-height: 1.6;
+
+}
+main {
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+/* Typographie - Poppins pour les titres */
+h1, h2, .intro__title, .news__title {
+  font-family: var(--font-primary);
+  font-weight: 700;
+}
+
+main h2 {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  color: #2780e3;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Focus pour accessibilité */
+a:focus, button:focus {
+  outline: 3px solid var(--color-om-gold);
+  outline-offset: 2px;
+}
+
+
+
+/* Badge "nouveau" */
+.badge-new {
+  display: inline-block;
+  background: #4caf50;
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-left: 8px;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  main h2 {
+    font-size: 1.5rem;
+  }
+
+  .mini-sites-grid {
+        grid-template-columns: 1fr;
+      }
+}

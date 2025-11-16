@@ -1,0 +1,156 @@
+/* ============================================
+   PABLO.CSS - Page d'accueil Pablo Longoria
+   ============================================ */
+
+/* 🎯 HERO - Page Pablo */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 500px;
+  background-image: url('/Pablo-onglets/images/Pablophotofinal.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%);
+  z-index: 1;
+}
+
+.hero__content {
+  position: absolute;
+  top: 120px;
+  right: 20px;
+  z-index: 2;
+  text-align: right;
+  padding: var(--spacing-md);
+}
+
+.hero__title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0;
+  line-height: 1;
+}
+
+.hero__title-line1 {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.hero__title-line2 {
+  display: block;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+/* 🎯 PAGE PABLO - Biographie */
+.main--pablo {
+  padding: 0;
+  min-height: auto;
+  background-color: var(--color-white);
+}
+
+.bio {
+  background-color: var(--color-white);
+  padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+.bio__container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bio__section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.bio__text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-black);
+  margin: 0 0 var(--spacing-lg) 0;
+  text-align: justify;
+}
+
+/* Lettrine - première lettre de la première section */
+.bio__section:first-child .bio__text::first-letter {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: var(--color-om-blue);
+  float: left;
+  line-height: 1;
+  margin: 0 10px 0 0;
+}
+
+/* 📱💻 RESPONSIVE PABLO - TABLETTES & DESKTOP (≥ 768px) */
+@media (min-width: 768px) {
+  .hero {
+    height: 100vh;
+  }
+  
+  .hero__content {
+    top: 150px;
+    right: 40px;
+  }
+  
+  .hero__title-line1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero__title-line2 {
+    font-size: 3rem;
+  }
+  
+  .bio {
+    padding: 60px var(--spacing-lg);
+  }
+  
+  .bio__text {
+    font-size: 1.15rem;
+    line-height: 1.9;
+  }
+}
+
+/* 🖥️ RESPONSIVE PABLO - GRANDS ÉCRANS (≥ 1024px) */
+@media (min-width: 1024px) {
+  .hero__content {
+    top: 180px;
+    right: 60px;
+  }
+  
+  .hero__title-line1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero__title-line2 {
+    font-size: 4rem;
+  }
+  
+  .bio {
+    padding: 80px var(--spacing-lg);
+  }
+  
+  .bio__container {
+    max-width: 900px;
+  }
+}

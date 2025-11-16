@@ -1,0 +1,31 @@
+/* ============================================
+   FANSITE1.CSS - Fichier principal
+   Mini-site Pablo Longoria - OM
+   ============================================ */
+/* Import des modules CSS */
+@import url('base.css');
+@import url('header.css');
+@import url('footer.css');
+@import url('pablo.css');
+@import url('pages.css');
+@import url('evenements.css');
+@import url('contact.css');
+@import url('chronologie.css');
+@import url('videos.css');
+
+/* ============================================
+   Note d'utilisation :
+   
+   Ce fichier sert de point d'entrée principal.
+   Il importe tous les modules CSS nécessaires.
+   
+   Structure des fichiers :
+   - base.css : Variables, reset, typographie
+   - header.css : Header et navigation
+   - footer.css : Pied de page
+   - pablo.css : Page d'accueil Pablo (hero + bio)
+   - pages.css : Pages de contenu (actualités, biographie détaillée)
+   - evenements.css : Page événements
+   - contact.css : Page contact et formulaire
+   - chronologie.css : Page chronologie interactive
+   ============================================ */

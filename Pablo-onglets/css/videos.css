@@ -1,0 +1,119 @@
+/* ============================================
+   VIDEOS.CSS - Page Vidéos
+   ============================================ */
+
+.videos {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.videos__grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-lg);
+}
+
+.video-card {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+}
+
+.video-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Wrapper pour ratio 16:9 */
+.video-card__wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Ratio 16:9 */
+  background-color: #000;
+}
+
+.video-card__iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-card__content {
+  padding: var(--spacing-lg);
+}
+
+.video-card__title {
+  color: var(--color-om-blue);
+  font-size: 1.3rem;
+  margin: 0 0 var(--spacing-md) 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.video-card__description {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+}
+
+.video-card__link {
+  display: inline-block;
+  color: var(--color-om-blue);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color var(--transition-fast);
+}
+
+.video-card__link:hover {
+  color: var(--color-om-gold-dark);
+  text-decoration: underline;
+}
+
+/* 📱💻 RESPONSIVE VIDÉOS - TABLETTES & DESKTOP (≥ 768px) */
+@media (min-width: 768px) {
+  .videos__grid {
+    gap: var(--spacing-lg);
+  }
+  
+  .video-card {
+    flex-direction: row;
+  }
+  
+  .video-card__wrapper {
+    width: 50%;
+    padding-bottom: 28.125%; /* 16:9 pour 50% de largeur */
+    flex-shrink: 0;
+  }
+  
+  .video-card__content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+/* 🖥️ RESPONSIVE VIDÉOS - GRANDS ÉCRANS (≥ 1024px) */
+@media (min-width: 1024px) {
+  .video-card__wrapper {
+    width: 45%;
+    padding-bottom: 25.3125%; /* 16:9 pour 45% de largeur */
+  }
+  
+  .video-card__content {
+    width: 55%;
+  }
+  
+  .video-card__title {
+    font-size: 1.4rem;
+  }
+}
