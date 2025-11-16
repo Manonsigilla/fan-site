@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Mandanda-onglets/css/mandanda-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Fan Page Mandanda évènements</title>
+</head>
+<body>
+    <header>
+        <!-- ============================================
+        Container pour le burger et le titre (mobile)
+        ============================================ -->
+        <div class="header-top">
+            <!-- Bouton burger : visible uniquement sur mobile (< 768px) -->
+            <button class="burger-menu" aria-label="Menu" aria-expanded="false">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </button>
+
+            <!-- Logo : visible uniquement sur mobile (<768px) -->
+            <a href="/Index.html" class="logo-mobile">
+                <img src="/images/Image_20251106_131302_815.png" alt="logo OM">
+            </a>
+            
+            <!-- Titre principal de la page -->
+            <h1>FanPage OM dédié à Steve Mandanda</h1>
+        </div>
+        
+        <!-- ============================================
+        Menu overlay : s'affiche en plein écran sur mobile
+        ============================================ -->
+        <div class="menu-overlay">
+            <div class="menu-overlay-inner">
+                <ul class="menu-overlay-nav">
+                    <li class="menu-overlay-item">
+                        <a class="menu-overlay-link" href="/Mandanda-onglets/index.html">
+                            <span><div>Accueil</div></span>
+                        </a>
+                    </li>
+                    <li class="menu-overlay-item">
+                        <a class="menu-overlay-link" href="/Mandanda-onglets/actualite.html">
+                            <span><div>Actualité</div></span>
+                        </a>
+                    </li>
+                    <li class="menu-overlay-item">
+                        <a class="menu-overlay-link" href="/Mandanda-onglets/biographie.html">
+                            <span><div>Biographie</div></span>
+                        </a>
+                    </li>
+                    <li class="menu-overlay-item">
+                        <a class="menu-overlay-link" href="/Mandanda-onglets/galerie.html">
+                            <span><div>Galerie</div></span>
+                        </a>
+                    </li>
+                    <li class="menu-overlay-item">
+                        <a class="menu-overlay-link" href="/Mandanda-onglets/merchandising.html">
+                            <span><div>Merchandising</div></span>
+                        </a>
+                    </li>
+                    <li class="menu-overlay-item">
+                        <a class="menu-overlay-link" href="/Mandanda-onglets/contact.html">
+                            <span><div>Contact</div></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- ============================================
+        Navigation desktop : visible uniquement > 768px
+        ============================================ -->
+        <nav>
+            <!-- Logo OM cliquable -->
+            <a href="/Index.html" class="logo">
+                <img src="/images/Image_20251106_131302_815.png" alt="logo OM">
+            </a>
+            
+            <!-- Liste des liens de navigation -->
+            <ul>
+                <li><a href="/Mandanda-onglets/index.html">Accueil</a></li>
+                <li><a href="/Mandanda-onglets/actualite.html">Actualité</a></li>
+                <li><a href="/Mandanda-onglets/biographie.html">Biographie</a></li>
+                <li><a href="/Mandanda-onglets/galerie.html">Galerie</a></li>
+                <li><a href="/Mandanda-onglets/merchandising.html">Merchandising</a></li>
+                <li><a href="/Mandanda-onglets/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ============================================
+        SECTION GALERIE PHOTOS
+        Défilement continu horizontal avec pause au survol
+        ============================================ -->
+        <section class="photos-gallery">
+            <h2>Grands moments de Steve Mandanda</h2>
+            <h3>Galerie Photos</h3>
+            
+            <!-- Conteneur de défilement - les photos défilent en boucle -->
+            <div class="gallery-scroll">
+                <!-- Photo 1 : Crystal Palace -->
+                <div class="photo-item">
+                    <div class="photo-card">
+                        <label for="photo1">
+                            <img src="/Mandanda-onglets/images/galerie-photos/1182697-steve-mandanda-sous-les-couleurs-de-crystal-palace-en-aout-2016.jpg" alt="Steve Mandanda en action">
+                            <div class="photo-description">
+                                <p>Steve Mandanda sous les couleurs de Crystal Palace lors de son passage en Premier League (2016)</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Photo 2 : Célébration -->
+                <div class="photo-item">
+                    <div class="photo-card">
+                        <label for="photo2">
+                            <img src="/Mandanda-onglets/images/galerie-photos/131942877_1513600659030388_4126851337502816227_n.jpg" alt="Steve Mandanda célébrant une victoire">
+                            <div class="photo-description">
+                                <p>Moment de célébration intense avec les supporters du Vélodrome</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Photo 3 : Maillot OM -->
+                <div class="photo-item">
+                    <div class="photo-card">
+                        <label for="photo3">
+                            <img src="/Mandanda-onglets/images/galerie-photos/2686591-55554130-2560-1440.jpg" alt="Steve Mandanda avec le maillot de l'OM">
+                            <div class="photo-description">
+                                <p>Fier de porter les couleurs de l'Olympique de Marseille</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Photo 4 : Entraînement -->
+                <div class="photo-item">
+                    <div class="photo-card">
+                        <label for="photo4">
+                            <img src="/Mandanda-onglets/images/galerie-photos/544796872_1195517892609939_6550407899550759691_n.jpg" alt="Steve Mandanda lors d'un entraînement">
+                            <div class="photo-description">
+                                <p>Concentration maximale lors d'une séance d'entraînement</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Photo 5 : Trophée -->
+                <div class="photo-item">
+                    <div class="photo-card">
+                        <label for="photo5">
+                            <img src="/Mandanda-onglets/images/galerie-photos/640x408_marseille-s-french-goalkepper-steve-mandanda-holds-the-trophy-to-celebrate-their-1-0-victory-against-montpellier-during-the-fre.jpg" alt="Steve Mandanda avec un trophée">
+                            <div class="photo-description">
+                                <p>Steve Mandanda brandit le trophée après une victoire décisive contre Montpellier</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Photo 6 : Avec les fans -->
+                <div class="photo-item">
+                    <div class="photo-card">
+                        <label for="photo6">
+                            <img src="/Mandanda-onglets/images/galerie-photos/cdl-20110424080628-9026.jpg" alt="Steve Mandanda avec des fans">
+                            <div class="photo-description">
+                                <p>Proximité avec les supporters, un lien indéfectible</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Duplication des photos pour créer l'effet de boucle infinie -->
+                <div class="photo-item">
+                    <div class="photo-card">
+                        <label for="photo1b">
+                            <img src="/Mandanda-onglets/images/galerie-photos/1182697-steve-mandanda-sous-les-couleurs-de-crystal-palace-en-aout-2016.jpg" alt="Steve Mandanda en action">
+                            <div class="photo-description">
+                                <p>Steve Mandanda sous les couleurs de Crystal Palace lors de son passage en Premier League (2016)</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="photo-item">
+                    <div class="photo-card">
+                        <label for="photo2b">
+                            <img src="/Mandanda-onglets/images/galerie-photos/131942877_1513600659030388_4126851337502816227_n.jpg" alt="Steve Mandanda célébrant une victoire">
+                            <div class="photo-description">
+                                <p>Moment de célébration intense avec les supporters du Vélodrome</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="photo-item">
+                    <div class="photo-card">
+                        <label for="photo3b">
+                            <img src="/Mandanda-onglets/images/galerie-photos/2686591-55554130-2560-1440.jpg" alt="Steve Mandanda avec le maillot de l'OM">
+                            <div class="photo-description">
+                                <p>Fier de porter les couleurs de l'Olympique de Marseille</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="photo-item">
+                    <div class="photo-card">
+                        <label for="photo4b">
+                            <img src="/Mandanda-onglets/images/galerie-photos/544796872_1195517892609939_6550407899550759691_n.jpg" alt="Steve Mandanda lors d'un entraînement">
+                            <div class="photo-description">
+                                <p>Concentration maximale lors d'une séance d'entraînement</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="photo-item">
+                    <div class="photo-card">
+                        <label for="photo5b">
+                            <img src="/Mandanda-onglets/images/galerie-photos/640x408_marseille-s-french-goalkepper-steve-mandanda-holds-the-trophy-to-celebrate-their-1-0-victory-against-montpellier-during-the-fre.jpg" alt="Steve Mandanda avec un trophée">
+                            <div class="photo-description">
+                                <p>Steve Mandanda brandit le trophée après une victoire décisive contre Montpellier</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="photo-item">
+                    <div class="photo-card">
+                        <label for="photo6b">
+                            <img src="/Mandanda-onglets/images/galerie-photos/cdl-20110424080628-9026.jpg" alt="Steve Mandanda avec des fans">
+                            <div class="photo-description">
+                                <p>Proximité avec les supporters, un lien indéfectible</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================
+            MODALS PHOTOS - Placés en dehors du gallery-scroll
+            ============================================ -->
+            <input type="checkbox" class="photo-checkbox" id="photo1">
+            <div class="photo-modal" data-modal="photo1">
+                <div class="modal-content">
+                    <label for="photo1" class="modal-close">✕</label>
+                    <img src="/Mandanda-onglets/images/galerie-photos/1182697-steve-mandanda-sous-les-couleurs-de-crystal-palace-en-aout-2016.jpg" alt="Steve Mandanda en action">
+                    <div class="modal-description">
+                        <p>Steve Mandanda sous les couleurs de Crystal Palace lors de son passage en Premier League (2016)</p>
+                    </div>
+                </div>
+            </div>
+
+            <input type="checkbox" class="photo-checkbox" id="photo2">
+            <div class="photo-modal" data-modal="photo2">
+                <div class="modal-content">
+                    <label for="photo2" class="modal-close">✕</label>
+                    <img src="/Mandanda-onglets/images/galerie-photos/131942877_1513600659030388_4126851337502816227_n.jpg" alt="Steve Mandanda célébrant une victoire">
+                    <div class="modal-description">
+                        <p>Moment de célébration intense avec les supporters du Vélodrome</p>
+                    </div>
+                </div>
+            </div>
+
+            <input type="checkbox" class="photo-checkbox" id="photo3">
+            <div class="photo-modal" data-modal="photo3">
+                <div class="modal-content">
+                    <label for="photo3" class="modal-close">✕</label>
+                    <img src="/Mandanda-onglets/images/galerie-photos/2686591-55554130-2560-1440.jpg" alt="Steve Mandanda avec le maillot de l'OM">
+                    <div class="modal-description">
+                        <p>Fier de porter les couleurs de l'Olympique de Marseille</p>
+                    </div>
+                </div>
+            </div>
+
+            <input type="checkbox" class="photo-checkbox" id="photo4">
+            <div class="photo-modal" data-modal="photo4">
+                <div class="modal-content">
+                    <label for="photo4" class="modal-close">✕</label>
+                    <img src="/Mandanda-onglets/images/galerie-photos/544796872_1195517892609939_6550407899550759691_n.jpg" alt="Steve Mandanda lors d'un entraînement">
+                    <div class="modal-description">
+                        <p>Concentration maximale lors d'une séance d'entraînement</p>
+                    </div>
+                </div>
+            </div>
+
+            <input type="checkbox" class="photo-checkbox" id="photo5">
+            <div class="photo-modal" data-modal="photo5">
+                <div class="modal-content">
+                    <label for="photo5" class="modal-close">✕</label>
+                    <img src="/Mandanda-onglets/images/galerie-photos/640x408_marseille-s-french-goalkepper-steve-mandanda-holds-the-trophy-to-celebrate-their-1-0-victory-against-montpellier-during-the-fre.jpg" alt="Steve Mandanda avec un trophée">
+                    <div class="modal-description">
+                        <p>Steve Mandanda brandit le trophée après une victoire décisive contre Montpellier</p>
+                    </div>
+                </div>
+            </div>
+
+            <input type="checkbox" class="photo-checkbox" id="photo6">
+            <div class="photo-modal" data-modal="photo6">
+                <div class="modal-content">
+                    <label for="photo6" class="modal-close">✕</label>
+                    <img src="/Mandanda-onglets/images/galerie-photos/cdl-20110424080628-9026.jpg" alt="Steve Mandanda avec des fans">
+                    <div class="modal-description">
+                        <p>Proximité avec les supporters, un lien indéfectible</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modals pour les photos dupliquées -->
+            <input type="checkbox" class="photo-checkbox" id="photo1b">
+            <div class="photo-modal" data-modal="photo1b">
+                <div class="modal-content">
+                    <label for="photo1b" class="modal-close">✕</label>
+                    <img src="/Mandanda-onglets/images/galerie-photos/1182697-steve-mandanda-sous-les-couleurs-de-crystal-palace-en-aout-2016.jpg" alt="Steve Mandanda en action">
+                    <div class="modal-description">
+                        <p>Steve Mandanda sous les couleurs de Crystal Palace lors de son passage en Premier League (2016)</p>
+                    </div>
+                </div>
+            </div>
+
+            <input type="checkbox" class="photo-checkbox" id="photo2b">
+            <div class="photo-modal" data-modal="photo2b">
+                <div class="modal-content">
+                    <label for="photo2b" class="modal-close">✕</label>
+                    <img src="/Mandanda-onglets/images/galerie-photos/131942877_1513600659030388_4126851337502816227_n.jpg" alt="Steve Mandanda célébrant une victoire">
+                    <div class="modal-description">
+                        <p>Moment de célébration intense avec les supporters du Vélodrome</p>
+                    </div>
+                </div>
+            </div>
+
+            <input type="checkbox" class="photo-checkbox" id="photo3b">
+            <div class="photo-modal" data-modal="photo3b">
+                <div class="modal-content">
+                    <label for="photo3b" class="modal-close">✕</label>
+                    <img src="/Mandanda-onglets/images/galerie-photos/2686591-55554130-2560-1440.jpg" alt="Steve Mandanda avec le maillot de l'OM">
+                    <div class="modal-description">
+                        <p>Fier de porter les couleurs de l'Olympique de Marseille</p>
+                    </div>
+                </div>
+            </div>
+
+            <input type="checkbox" class="photo-checkbox" id="photo4b">
+            <div class="photo-modal" data-modal="photo4b">
+                <div class="modal-content">
+                    <label for="photo4b" class="modal-close">✕</label>
+                    <img src="/Mandanda-onglets/images/galerie-photos/544796872_1195517892609939_6550407899550759691_n.jpg" alt="Steve Mandanda lors d'un entraînement">
+                    <div class="modal-description">
+                        <p>Concentration maximale lors d'une séance d'entraînement</p>
+                    </div>
+                </div>
+            </div>
+
+            <input type="checkbox" class="photo-checkbox" id="photo5b">
+            <div class="photo-modal" data-modal="photo5b">
+                <div class="modal-content">
+                    <label for="photo5b" class="modal-close">✕</label>
+                    <img src="/Mandanda-onglets/images/galerie-photos/640x408_marseille-s-french-goalkepper-steve-mandanda-holds-the-trophy-to-celebrate-their-1-0-victory-against-montpellier-during-the-fre.jpg" alt="Steve Mandanda avec un trophée">
+                    <div class="modal-description">
+                        <p>Steve Mandanda brandit le trophée après une victoire décisive contre Montpellier</p>
+                    </div>
+                </div>
+            </div>
+
+            <input type="checkbox" class="photo-checkbox" id="photo6b">
+            <div class="photo-modal" data-modal="photo6b">
+                <div class="modal-content">
+                    <label for="photo6b" class="modal-close">✕</label>
+                    <img src="/Mandanda-onglets/images/galerie-photos/cdl-20110424080628-9026.jpg" alt="Steve Mandanda avec des fans">
+                    <div class="modal-description">
+                        <p>Proximité avec les supporters, un lien indéfectible</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+        SECTION GALERIE VIDÉOS
+        Disposition en grille flex avec cartes modernes
+        ============================================ -->
+        <section class="videos-gallery">
+            <h2>Galerie Vidéos</h2>
+            <h3>Moments légendaires en vidéo</h3>
+            
+            <!-- Conteneur flex qui s'adapte automatiquement -->
+            <div class="gallery-videos">
+                <!-- Vidéo 1 : TikTok - Moments inoubliables -->
+                <div class="video-card">
+                    <label for="video1" class="video-thumbnail">
+                        <blockquote class="tiktok-embed tiktok-preview" cite="https://www.tiktok.com/@dernierrempartfoot/video/7558494944617336086" data-video-id="7558494944617336086" style="max-width: 100%; min-width: 100%;">
+                            <section>
+                                <a target="_blank" title="@dernierrempartfoot" href="https://www.tiktok.com/@dernierrempartfoot?refer=embed">@dernierrempartfoot</a>
+                            </section>
+                        </blockquote>
+                    </label>
+                    <div class="video-info">
+                        <h4>Moments inoubliables</h4>
+                        <p>Les plus belles parades et arrêts décisifs de Steve Mandanda</p>
+                    </div>
+                </div>
+
+                <!-- Vidéo 3 : TikTok - Légende de l'OM -->
+                <div class="video-card">
+                    <label for="video3" class="video-thumbnail">
+                        <blockquote class="tiktok-embed tiktok-preview" cite="https://www.tiktok.com/@footdependance/video/7506165837649235222" data-video-id="7506165837649235222" style="max-width: 100%; min-width: 100%;">
+                            <section>
+                                <a target="_blank" title="@footdependance" href="https://www.tiktok.com/@footdependance?refer=embed">@footdependance</a>
+                            </section>
+                        </blockquote>
+                    </label>
+                    <div class="video-info">
+                        <h4>Légende de l'OM</h4>
+                        <p>Le joueur le plus capé de l'histoire de l'Olympique de Marseille</p>
+                    </div>
+                </div>
+
+                <!-- Vidéo 4 : YouTube - Compilation -->
+                <div class="video-card">
+                    <label for="video4" class="video-thumbnail">
+                        <!-- ✅ APERÇU YOUTUBE : Miniature officielle -->
+                        <img src="https://img.youtube.com/vi/VW8lNg-iY84/maxresdefault.jpg" 
+                        alt="Prévisualisation YouTube"
+                        onerror="this.src='https://img.youtube.com/vi/VW8lNg-iY84/hqdefault.jpg'">
+                    </label>
+                    <div class="video-info">
+                        <h4>Best Saves Compilation</h4>
+                        <p>Les plus beaux arrêts de Steve Mandanda en carrière</p>
+                    </div>
+                </div>
+
+                <!-- Vidéo 5 : TikTok DAZN - Entrée symbolique -->
+                <div class="video-card">
+                    <label for="video5" class="video-thumbnail">
+                        <blockquote class="tiktok-embed tiktok-preview" cite="https://www.tiktok.com/@dazn.france/video/7505787907072920854" data-video-id="7505787907072920854" style="max-width: 100%; min-width: 100%;">
+                            <section>
+                                <a target="_blank" title="@dazn.france" href="https://www.tiktok.com/@dazn.france?refer=embed">@dazn.france</a>
+                            </section>
+                        </blockquote>
+                    </label>
+                    <div class="video-info">
+                        <h4>Entrée symbolique</h4>
+                        <p>L'ovation du Vélodrome lors de son entrée en fin de match</p>
+                    </div>
+                </div>
+
+                <!-- Vidéo 6 : TikTok - Explosion du Vélodrome -->
+                <div class="video-card">
+                    <label for="video6" class="video-thumbnail">
+                        <blockquote class="tiktok-embed tiktok-preview" cite="https://www.tiktok.com/@karim.attab/video/7513280711605046550" data-video-id="7513280711605046550" style="max-width: 100%; min-width: 100%;">
+                            <section>
+                                <a target="_blank" title="@karim.attab" href="https://www.tiktok.com/@karim.attab?refer=embed">@karim.attab</a>
+                            </section>
+                        </blockquote>
+                    </label>
+                    <div class="video-info">
+                        <h4>Le Vélodrome en feu</h4>
+                        <p>L'ambiance exceptionnelle lors de l'entrée de Mandanda face à Rennes</p>
+                    </div>
+                </div>
+
+                <!-- Vidéo 8 : TikTok - Merci Steve -->
+                <div class="video-card">
+                    <label for="video8" class="video-thumbnail">
+                        <blockquote class="tiktok-embed tiktok-preview" cite="https://www.tiktok.com/@rfootball.pssn/video/7505704252799487254" data-video-id="7505704252799487254" style="max-width: 100%; min-width: 100%;">
+                            <section>
+                                <a target="_blank" title="@rfootball.pssn" href="https://www.tiktok.com/@rfootball.pssn?refer=embed">@rfootball.pssn</a>
+                            </section>
+                        </blockquote>
+                    </label>
+                    <div class="video-info">
+                        <h4>Merci Steve Mandanda</h4>
+                        <p>Un hommage émouvant à une carrière exceptionnelle</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================
+            MODALS VIDÉOS - Placés en dehors du gallery-videos
+            ============================================ -->
+            <input type="checkbox" class="video-checkbox" id="video1">
+            <div class="video-modal" data-modal="video1">
+                <div class="video-modal-content">
+                    <label for="video1" class="video-close">Fermer ✕</label>
+                    <div class="video-player">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@dernierrempartfoot/video/7558494944617336086" data-video-id="7558494944617336086" style="max-width: 605px;min-width: 325px;">
+                            <section>
+                                <a target="_blank" title="@dernierrempartfoot" href="https://www.tiktok.com/@dernierrempartfoot?refer=embed">@dernierrempartfoot</a>
+                                Mes moments inoubliables de Steve Mandanda
+                            </section>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <input type="checkbox" class="video-checkbox" id="video3">
+            <div class="video-modal" data-modal="video3">
+                <div class="video-modal-content">
+                    <label for="video3" class="video-close">Fermer ✕</label>
+                    <div class="video-player">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@footdependance/video/7506165837649235222" data-video-id="7506165837649235222" style="max-width: 605px;min-width: 325px;">
+                            <section>
+                                <a target="_blank" title="@footdependance" href="https://www.tiktok.com/@footdependance?refer=embed">@footdependance</a>
+                                La LÉGENDE de l'Olympique de Marseille
+                            </section>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <input type="checkbox" class="video-checkbox" id="video4">
+            <div class="video-modal" data-modal="video4">
+                <div class="video-modal-content">
+                    <label for="video4" class="video-close">Fermer ✕</label>
+                    <div class="video-player">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VW8lNg-iY84?si=2ckfj4SbbUV5WJMj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <input type="checkbox" class="video-checkbox" id="video5">
+            <div class="video-modal" data-modal="video5">
+                <div class="video-modal-content">
+                    <label for="video5" class="video-close">Fermer ✕</label>
+                    <div class="video-player">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@dazn.france/video/7505787907072920854" data-video-id="7505787907072920854" style="max-width: 605px;min-width: 325px;">
+                            <section>
+                                <a target="_blank" title="@dazn.france" href="https://www.tiktok.com/@dazn.france?refer=embed">@dazn.france</a>
+                                Entrée symbolique et immense ovation pour Steve Mandanda
+                            </section>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <input type="checkbox" class="video-checkbox" id="video6">
+            <div class="video-modal" data-modal="video6">
+                <div class="video-modal-content">
+                    <label for="video6" class="video-close">Fermer ✕</label>
+                    <div class="video-player">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@karim.attab/video/7513280711605046550" data-video-id="7513280711605046550" style="max-width: 605px;min-width: 325px;">
+                            <section>
+                                <a target="_blank" title="@karim.attab" href="https://www.tiktok.com/@karim.attab?refer=embed">@karim.attab</a>
+                                Steve Mandanda entre pour les derniers instants du match OM-Rennes
+                            </section>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <input type="checkbox" class="video-checkbox" id="video8">
+            <div class="video-modal" data-modal="video8">
+                <div class="video-modal-content">
+                    <label for="video8" class="video-close">Fermer ✕</label>
+                    <div class="video-player">
+                        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@rfootball.pssn/video/7505704252799487254" data-video-id="7505704252799487254" style="max-width: 605px;min-width: 325px;">
+                            <section>
+                                <a target="_blank" title="@rfootball.pssn" href="https://www.tiktok.com/@rfootball.pssn?refer=embed">@rfootball.pssn</a>
+                                Merci Steve Mandanda 🤍🩵
+                            </section>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <nav>
+            <!-- Logo OM cliquable -->
+            <a href="/Index.html" class="logo-footer">
+                <img src="/images/Image_20251106_131302_815.png" alt="logo OM">
+            </a>
+            
+            <!-- Liste des liens de navigation -->
+            <ul>
+                <li><a href="/Mandanda-onglets/index.html">Accueil</a></li>
+                <li><a href="/Mandanda-onglets/actualite.html">Actualité</a></li>
+                <li><a href="/Mandanda-onglets/biographie.html">Biographie</a></li>
+                <li><a href="/Mandanda-onglets/galerie.html">Galerie</a></li>
+                <li><a href="/Mandanda-onglets/merchandising.html">Merchandising</a></li>
+                <li><a href="/Mandanda-onglets/contact.html">Contact</a></li>
+            </ul>
+
+        </nav>
+
+    </footer>
+    <script>
+        // ============================================
+        // GESTION DU MENU BURGER
+        // ============================================
+        const burgerMenu = document.querySelector('.burger-menu');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        const body = document.body;
+
+        // Ouvrir/fermer le menu burger
+        burgerMenu.addEventListener('click', function() {
+            burgerMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            body.classList.toggle('menu-open');
+            
+            const isExpanded = burgerMenu.classList.contains('active');
+            burgerMenu.setAttribute('aria-expanded', isExpanded);
+        });
+
+        // Fermer le menu quand on clique sur un lien
+        const menuLinks = document.querySelectorAll('.menu-overlay-link');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                burgerMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                body.classList.remove('menu-open');
+                burgerMenu.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // ============================================
+        // GESTION DES MODALS PHOTOS
+        // ============================================
+        
+        // Récupère tous les modals photos
+        const photoModals = document.querySelectorAll('.photo-modal');
+        
+        // Pour chaque modal photo
+        photoModals.forEach(modal => {
+            // Ferme le modal quand on clique sur le fond (mais pas sur le contenu)
+            modal.addEventListener('click', function(e) {
+                // Si on clique directement sur le modal (pas sur son contenu)
+                if (e.target === modal) {
+                    // Trouve la checkbox associée et la décoche
+                    const modalId = modal.previousElementSibling.id;
+                    const checkbox = document.getElementById(modalId);
+                    if (checkbox) {
+                        checkbox.checked = false;
+                    }
+                }
+            });
+        });
+
+        // Pause le défilement des photos quand une photo est sélectionnée
+        const photoCheckboxes = document.querySelectorAll('.photo-checkbox');
+        const galleryScroll = document.querySelector('.gallery-scroll');
+        
+        photoCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                // Pause l'animation si une modal est ouverte
+                if (checkbox.checked) {
+                    galleryScroll.style.animationPlayState = 'paused';
+                } else {
+                    // Vérifie si aucune autre modal n'est ouverte avant de reprendre l'animation
+                    const anyChecked = Array.from(photoCheckboxes).some(cb => cb.checked);
+                    if (!anyChecked) {
+                        galleryScroll.style.animationPlayState = 'running';
+                    }
+                }
+            });
+        });
+
+        // ============================================
+        // GESTION DES MODALS VIDÉOS
+        // ============================================
+        
+        // Récupère tous les modals vidéos
+        const videoModals = document.querySelectorAll('.video-modal');
+        
+        // Pour chaque modal vidéo
+        videoModals.forEach(modal => {
+            // Ferme le modal quand on clique sur le fond (mais pas sur le contenu)
+            modal.addEventListener('click', function(e) {
+                // Si on clique directement sur le modal (pas sur son contenu)
+                if (e.target === modal) {
+                    // Trouve la checkbox associée et la décoche
+                    const modalId = modal.previousElementSibling.id;
+                    const checkbox = document.getElementById(modalId);
+                    if (checkbox) {
+                        checkbox.checked = false;
+                        // arrête la vidéo quand on ferme la modal
+                        stopVideoInModal(modal);
+                    }
+                }
+            });
+        });
+
+        // fonction pour arrêter la vidéo dans une modal
+        function stopVideoInModal(modal) {
+            const iframes = modal.querySelectorAll('iframe');
+            iframes.forEach(iframe => {
+                const src = iframe.src;
+                iframe.src = ''; // Vide la source pour arrêter la vidéo
+                iframe.src = src; // Réinitialise la source pour arrêter la vidéo
+            });
+
+            // Pour les vidéos TikTok intégrées
+            const tiktokEmbeds = modal.querySelectorAll('blockquote.tiktok-embed');
+            tiktokEmbeds.forEach(embed => {
+                const parent = embed.parentNode;
+                parent.removeChild(embed); // Supprime l'intégration
+                parent.innerHTML = embed.outerHTML; // Réinsère pour réinitialiser
+            });
+        }
+
+        // ============================================
+        // FERMETURE DES MODALS AVEC LA TOUCHE ÉCHAP
+        // ============================================
+        
+        document.addEventListener('keydown', function(e) {
+            // Si la touche Échap est pressée
+            if (e.key === 'Escape' || e.key === 'Esc') {
+                // Ferme toutes les modals photos ouvertes
+                photoCheckboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        checkbox.checked = false;
+                    }
+                });
+                
+                // Ferme toutes les modals vidéos ouvertes
+                const videoCheckboxes = document.querySelectorAll('.video-checkbox');
+                videoCheckboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        checkbox.checked = false;
+                    }
+                });
+                
+                // Reprend l'animation du défilement
+                galleryScroll.style.animationPlayState = 'running';
+            }
+        });
+
+        // ============================================
+        // CHARGEMENT DU SCRIPT TIKTOK
+        // ============================================
+        
+        // Charge le script TikTok après que la page soit chargée
+        if (!document.querySelector('script[src*="tiktok.com/embed.js"]')) {
+            const tiktokScript = document.createElement('script');
+            tiktokScript.src = 'https://www.tiktok.com/embed.js';
+            tiktokScript.async = true;
+            document.body.appendChild(tiktokScript);
+        }
+</script>
+</body>
+</html>

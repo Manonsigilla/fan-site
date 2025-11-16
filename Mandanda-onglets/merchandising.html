@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Mandanda-onglets/css/mandanda-style.css">
+    <link rel="stylesheet" href="/Mandanda-onglets/css/merchandising.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Merchandising - Fan Page Mandanda</title>
+</head>
+<body>
+    <header>
+        <!-- ============================================
+        Container pour le burger et le titre (mobile)
+        ============================================ -->
+        <div class="header-top">
+            <!-- Bouton burger : visible uniquement sur mobile (< 768px) -->
+            <button class="burger-menu" aria-label="Menu" aria-expanded="false">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </button>
+
+            <!-- Logo : visible uniquement sur mobile (<768px) -->
+            <a href="/Index.html" class="logo-mobile">
+                <img src="/images/Image_20251106_131302_815.png" alt="logo OM">
+            </a>
+            
+            <!-- Titre principal de la page -->
+            <h1>FanPage OM dédié à Steve Mandanda</h1>
+        </div>
+        
+        <!-- ============================================
+        Menu overlay : s'affiche en plein écran sur mobile
+        ============================================ -->
+        <div class="menu-overlay">
+            <div class="menu-overlay-inner">
+                <ul class="menu-overlay-nav">
+                    <li class="menu-overlay-item">
+                        <a class="menu-overlay-link" href="/Mandanda-onglets/index.html">
+                            <span><div>Accueil</div></span>
+                        </a>
+                    </li>
+                    <li class="menu-overlay-item">
+                        <a class="menu-overlay-link" href="/Mandanda-onglets/actualite.html">
+                            <span><div>Actualité</div></span>
+                        </a>
+                    </li>
+                    <li class="menu-overlay-item">
+                        <a class="menu-overlay-link" href="/Mandanda-onglets/biographie.html">
+                            <span><div>Biographie</div></span>
+                        </a>
+                    </li>
+                    <li class="menu-overlay-item">
+                        <a class="menu-overlay-link" href="/Mandanda-onglets/galerie.html">
+                            <span><div>Galerie</div></span>
+                        </a>
+                    </li>
+                    <li class="menu-overlay-item">
+                        <a class="menu-overlay-link" href="/Mandanda-onglets/merchandising.html">
+                            <span><div>Merchandising</div></span>
+                        </a>
+                    </li>
+                    <li class="menu-overlay-item">
+                        <a class="menu-overlay-link" href="/Mandanda-onglets/contact.html">
+                            <span><div>Contact</div></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- ============================================
+        Navigation desktop : visible uniquement > 768px
+        ============================================ -->
+        <nav>
+            <!-- Logo OM cliquable -->
+            <a href="/Index.html" class="logo">
+                <img src="/images/Image_20251106_131302_815.png" alt="logo OM">
+            </a>
+            
+            <!-- Liste des liens de navigation -->
+            <ul>
+                <li><a href="/Mandanda-onglets/index.html">Accueil</a></li>
+                <li><a href="/Mandanda-onglets/actualite.html">Actualité</a></li>
+                <li><a href="/Mandanda-onglets/biographie.html">Biographie</a></li>
+                <li><a href="/Mandanda-onglets/galerie.html">Galerie</a></li>
+                <li><a href="/Mandanda-onglets/merchandising.html">Merchandising</a></li>
+                <li><a href="/Mandanda-onglets/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Icône panier fixe -->
+        <div class="cart-icon-fixed" onclick="toggleCart()">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-count">0</span>
+        </div>
+
+        <!-- Section Produits -->
+        <section id="products" class="products-section">
+            <h2>Boutique Officielle Steve Mandanda</h2>
+            <p class="intro-text">Soutenez votre gardien légendaire avec nos produits exclusifs !</p>
+            
+            <div class="products-grid" id="products-grid">
+                <!-- Les produits seront générés par JavaScript -->
+            </div>
+        </section>
+
+        <!-- Panier (sidebar) -->
+        <aside id="cart-sidebar" class="cart-sidebar">
+            <div class="cart-header">
+                <h2>Votre Panier</h2>
+                <button class="close-btn" onclick="toggleCart()">✕</button>
+            </div>
+            <div id="cart-items" class="cart-items">
+                <!-- Les articles du panier seront générés ici -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total: </strong>
+                    <span id="cart-total">0.00€</span>
+                </div>
+                <button class="btn btn-primary" onclick="goToCheckout()" id="checkout-btn">
+                    Commander
+                </button>
+            </div>
+        </aside>
+
+        <!-- Page de commande -->
+        <section id="checkout-section" class="checkout-section" style="display: none;">
+            <h2>Finaliser la commande</h2>
+            
+            <div class="checkout-container">
+                <div class="checkout-summary">
+                    <h3>Récapitulatif de commande</h3>
+                    <div id="checkout-items"></div>
+                    <div class="checkout-total">
+                        <strong>Total: </strong>
+                        <span id="checkout-total">0.00€</span>
+                    </div>
+                </div>
+
+                <form id="checkout-form" class="checkout-form">
+                    <h3>Informations de livraison</h3>
+                    
+                    <div class="form-group">
+                        <label for="firstName">Prénom *</label>
+                        <input type="text" id="firstName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Nom *</label>
+                        <input type="text" id="lastName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Téléphone *</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Adresse *</label>
+                        <input type="text" id="address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">Ville *</label>
+                        <input type="text" id="city" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="postalCode">Code postal *</label>
+                            <input type="text" id="postalCode" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="country">Pays *</label>
+                            <input type="text" id="country" value="France" required>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="cancelCheckout()">
+                            Retour
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            Valider la commande
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Confirmation de commande -->
+        <section id="confirmation-section" class="confirmation-section" style="display: none;">
+            <div class="confirmation-card">
+                <div class="success-icon">✓</div>
+                <h2>Commande validée !</h2>
+                <p>Merci pour votre achat fictif.</p>
+                <p>Numéro de commande: <strong id="order-number"></strong></p>
+                <p class="om-message">Droit au but ! 💙⚪</p>
+                <button class="btn btn-primary" onclick="resetShop()">
+                    Retour à la boutique
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <nav>
+            <!-- Logo OM cliquable -->
+            <a href="/Index.html" class="logo-footer">
+                <img src="/images/Image_20251106_131302_815.png" alt="logo OM">
+            </a>
+            
+            <!-- Liste des liens de navigation -->
+            <ul>
+                <li><a href="/Mandanda-onglets/index.html">Accueil</a></li>
+                <li><a href="/Mandanda-onglets/actualite.html">Actualité</a></li>
+                <li><a href="/Mandanda-onglets/biographie.html">Biographie</a></li>
+                <li><a href="/Mandanda-onglets/galerie.html">Galerie</a></li>
+                <li><a href="/Mandanda-onglets/merchandising.html">Merchandising</a></li>
+                <li><a href="/Mandanda-onglets/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <!-- ============================================
+    Scripts JavaScript
+    ============================================ -->
+    <script src="https://kit.fontawesome.com/820b23ac92.js" crossorigin="anonymous">
+        // Menu burger
+        const burgerMenu = document.querySelector('.burger-menu');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        const body = document.body;
+
+        burgerMenu.addEventListener('click', function() {
+            burgerMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            body.classList.toggle('menu-open');
+            
+            const isExpanded = burgerMenu.classList.contains('active');
+            burgerMenu.setAttribute('aria-expanded', isExpanded);
+        });
+
+        const menuLinks = document.querySelectorAll('.menu-overlay-link');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                burgerMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                body.classList.remove('menu-open');
+                burgerMenu.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
+    <script src="/Mandanda-onglets/merchandising.js"></script>
+</body>
+</html>

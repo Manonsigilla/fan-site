@@ -1,0 +1,406 @@
+/* ============================================
+    GALERIE PHOTOS - Défilement continu
+    ============================================ */
+.photos-gallery {
+    margin-bottom: var(--space-xxlarge);
+    overflow: hidden;
+    position: relative; /* Important pour les modals */
+}
+
+/* Conteneur du défilement avec animation infinie */
+.gallery-scroll {
+    display: flex;
+    gap: var(--space-large);
+    animation: scroll 40s linear infinite;
+    width: max-content;
+}
+
+/* Animation de défilement continu de droite à gauche */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause de l'animation au survol */
+.gallery-scroll:hover {
+    animation-play-state: paused;
+}
+
+/* ============================================
+    CARTE PHOTO - Style moderne avec ombre
+    ============================================ */
+.photo-card {
+    position: relative;
+    width: 350px;
+    height: 250px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet de zoom léger au survol */
+.photo-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+}
+
+/* Image qui remplit toute la carte */
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ============================================
+    DESCRIPTION PHOTO - Animation bas vers haut
+    ============================================ */
+.photo-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    color: var(--color-white);
+    padding: var(--space-large);
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+/* Affichage de la description au survol */
+.photo-card:hover .photo-description {
+    transform: translateY(0);
+}
+
+.photo-description p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* ============================================
+    MODAL PHOTO - Ouverture en plein écran
+    ============================================ */
+
+/* Cache les checkboxes (utilisées pour le toggle CSS) */
+.photo-checkbox {
+    display: none;
+}
+
+/* Modal caché par défaut */
+.photo-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xlarge);
+    cursor: pointer; /* Indique qu'on peut cliquer pour fermer */
+}
+
+/* Affiche le modal quand la checkbox est cochée */
+.photo-checkbox:checked + .photo-modal {
+    display: flex;
+}
+
+/* Conteneur de l'image dans le modal */
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: default; /* Évite de fermer quand on clique sur le contenu */
+}
+
+/* Image en taille réelle dans le modal */
+.modal-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8);
+}
+
+/* Description sous l'image dans le modal */
+.modal-description {
+    background: var(--color-om-blue);
+    color: var(--color-white);
+    padding: var(--space-medium);
+    margin-top: var(--space-medium);
+    border-radius: 8px;
+    text-align: center;
+    max-width: 600px;
+}
+
+/* Bouton de fermeture du modal */
+.modal-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: var(--color-om-gold);
+    color: var(--color-black);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+    z-index: 10001;
+}
+
+.modal-close:hover {
+    background: var(--color-om-gold-dark);
+    color: var(--color-white);
+}
+
+/* Label cliquable pour ouvrir le modal */
+.photo-card label {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* ============================================
+    GALERIE VIDÉOS - Disposition en grille flex
+    ============================================ */
+.videos-gallery {
+    margin-top: var(--space-xxlarge);
+    position: relative; /* Important pour les modals */
+}
+
+/* Conteneur flex avec retour à la ligne automatique */
+.gallery-videos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xlarge);
+    justify-content: center;
+    padding: var(--space-xlarge) 0;
+}
+
+/* ============================================
+    CARTE VIDÉO - Style moderne uniforme
+    ============================================ */
+.video-card {
+    width: 350px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
+}
+
+/* Désactive l'interaction sur les previews TikTok (on clique sur le label) */
+.tiktok-preview {
+    pointer-events: none;
+    height: 100%;
+}
+
+/* Style pour les aperçus Facebook */
+.facebook-preview {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.facebook-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Conteneur miniature de la vidéo */
+.video-thumbnail {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, var(--color-om-blue), var(--color-om-gold-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Image de prévisualisation de la vidéo */
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Icône play au centre de la miniature */
+.video-thumbnail::after {
+    content: '▶';
+    font-size: 3rem;
+    color: var(--color-white);
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    z-index: 2;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    pointer-events: none; /* ne bloque pas les clics */
+}
+
+.video-thumbnail:hover::after {
+    opacity: 1;
+}
+
+/* Informations de la carte vidéo */
+.video-info {
+    padding: var(--space-large);
+}
+
+.video-info h4 {
+    font-family: var(--font-primary);
+    color: var(--color-om-gold);
+    margin-bottom: var(--space-small);
+    font-size: 1.1rem;
+}
+
+.video-info p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* ============================================
+    MODAL VIDÉO - Lecteur en plein écran
+    ============================================ */
+
+/* Cache les checkboxes vidéo */
+.video-checkbox {
+    display: none;
+}
+
+/* Modal caché par défaut */
+.video-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xlarge);
+    cursor: pointer; /* Indique qu'on peut cliquer pour fermer */
+}
+
+/* Affiche le modal quand la checkbox est cochée */
+.video-checkbox:checked + .video-modal {
+    display: flex;
+}
+
+/* Conteneur du lecteur vidéo */
+.video-modal-content {
+    max-width: 90%;
+    width: 1200px;
+    position: relative;
+    cursor: default; /* Évite de fermer quand on clique sur le contenu */
+    padding-top: 60px; 
+}
+
+/* Iframe ou embed vidéo responsive en taille réelle */
+.video-player {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8);
+    background: #000;
+}
+
+.video-player iframe,
+.video-player blockquote {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Bouton fermeture modal vidéo */
+.video-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--color-om-gold);
+    color: var(--color-black);
+    border: none;
+    padding: var(--space-medium) var(--space-large);
+    border-radius: 8px;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    z-index: 10001;
+    font-size: 1rem; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.video-close:hover {
+    background: var(--color-om-gold-dark);
+    color: var(--color-white);
+    transform: scale(1.05);
+}
+
+/* ============================================
+    RESPONSIVE - Adaptation mobile
+    ============================================ */
+@media (max-width: 768px) {
+    .photo-card,
+    .video-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .modal-content,
+    .video-modal-content {
+        max-width: 95%;
+    }
+
+    .modal-close {
+        top: -40px;
+    }
+
+    .video-close {
+        top: 0;
+        font-size: 0.9rem;
+        padding: var(--space-small) var(--space-medium);
+    }
+
+    .video-player {
+        min-height: 300px;
+        aspect-ratio: 9 / 16;
+    }
+}

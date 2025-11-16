@@ -1,0 +1,320 @@
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xxlarge);
+    align-items: start;
+}
+
+.contact-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: var(--space-xxlarge);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-section h2 {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    color: var(--color-om-gold);
+    margin-bottom: var(--space-xlarge);
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-large);
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--space-small);
+    color: var(--color-om-gold);
+    font-size: 1rem;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: var(--space-medium);
+    color: var(--color-om-gold);
+    font-size: 1.2rem;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: var(--space-medium) var(--space-medium) var(--space-medium) 3.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: var(--color-white);
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+    padding-top: var(--space-medium);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-om-gold);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 3px rgba(255, 208, 0, 0.1);
+}
+
+.contact-form button {
+    background: linear-gradient(135deg, var(--color-om-gold) 0%, var(--color-om-gold-dark) 100%);
+    color: var(--color-black);
+    border: none;
+    padding: var(--space-medium) var(--space-xlarge);
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: var(--font-primary);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 208, 0, 0.4);
+}
+
+.contact-form button:active {
+    transform: translateY(0);
+}
+
+.social-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: var(--space-xxlarge);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.social-section h2 {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    color: var(--color-om-gold);
+    margin-bottom: var(--space-xlarge);
+    text-align: center;
+}
+
+.social-text {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: var(--space-xxlarge);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xlarge);
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.social-links li {
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.social-links li:hover {
+    transform: scale(1.1);
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    color: var(--color-white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.social-links a i {
+    font-size: 2rem;
+}
+
+.social-links a:hover {
+    background: linear-gradient(135deg, var(--color-om-gold), var(--color-om-gold-dark));
+    border-color: var(--color-om-gold);
+    color: var(--color-black);
+    box-shadow: 0 8px 25px rgba(255, 208, 0, 0.4);
+}
+
+/* ============================================
+   STYLES POUR LE MESSAGE DE CONFIRMATION
+   ============================================ */
+
+.confirmation-message {
+    /* Caché par défaut */
+    display: none;
+    
+    /* Centrage et espacement */
+    text-align: center;
+    margin-top: var(--space-xlarge);
+    padding: var(--space-xlarge);
+    
+    /* Style visuel */
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(22, 163, 74, 0.2));
+    border: 2px solid rgba(34, 197, 94, 0.5);
+    border-radius: 20px;
+    
+    /* Animation d'apparition */
+    animation: slideInUp 0.5s ease-out;
+}
+
+/* Icône de confirmation (coche verte) */
+.confirmation-message i {
+    font-size: 4rem;
+    color: #22c55e;
+    margin-bottom: var(--space-medium);
+    display: block;
+}
+
+/* Titre du message de confirmation */
+.confirmation-message h3 {
+    color: #22c55e;
+    font-size: 1.8rem;
+    margin-bottom: var(--space-medium);
+}
+
+/* Texte du message de confirmation */
+.confirmation-message p {
+    color: var(--color-white);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Classe pour afficher le message */
+.confirmation-message.show {
+    display: block;
+}
+
+/* Classe pour cacher le formulaire */
+.contact-form.hidden {
+    display: none;
+}
+
+/* ============================================
+   ANIMATION POUR LE MESSAGE DE CONFIRMATION
+   ============================================ */
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   STYLES POUR LES MESSAGES D'ERREUR
+   ============================================ */
+
+/* Message d'erreur de validation */
+.error-message {
+    color: #ef4444;
+    font-size: 0.9rem;
+    margin-top: var(--space-small);
+    display: none;
+}
+
+/* Afficher le message d'erreur */
+.error-message.show {
+    display: block;
+}
+
+/* Input en erreur */
+.form-group.error input,
+.form-group.error textarea {
+    border-color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+}
+
+ /* Responsive */
+
+@media (max-width: 1024px) {
+    .contact-container {
+        gap: var(--space-xlarge);
+    }
+
+    .contact-section,
+    .social-section {
+        padding: var(--space-xlarge);
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-xlarge);
+    }
+
+    .contact-section,
+    .social-section {
+        padding: var(--space-xlarge) var(--space-medium);
+    }
+
+    .contact-section h2,
+    .social-section h2 {
+        font-size: 2rem;
+    }
+
+    .social-links {
+        gap: var(--space-large);
+    }
+
+    .social-links a {
+        width: 70px;
+        height: 70px;
+    }
+
+    .social-links a i {
+        font-size: 1.8rem;
+    }
+}

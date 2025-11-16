@@ -1,0 +1,56 @@
+footer {
+    /* Image de fond avec overlay sombre pour la lisibilité */
+    background-image: linear-gradient(
+        180deg, 
+        rgba(0, 0, 0, 0.4) 0%, 
+        rgba(0, 0, 0, 0.6) 100%
+    ), url(/Mandanda-onglets/images/67d5654e339bd16d0766f4d555269c92.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Effet parallaxe */
+    width: 100%;
+    overflow: hidden;
+    height: 150px;
+    padding-top: 20px;
+}
+footer nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+footer nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+footer nav a {
+    text-decoration: none;
+    color: var(--color-white);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+footer nav a:hover {
+    color: var(--color-om-gold);
+}
+
+.logo-footer img {
+    width: 75px;
+    height: 75px;
+    border: 2px solid var(--color-om-gold);
+    transition: transform 0.3s ease;
+    background: var(--color-white);
+    backdrop-filter: blur(15px); /* Effet de verre dépoli */
+    border-radius: 50px; /* Capsule arrondie */
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+    position: relative;
+}
+.logo-footer:hover img {
+    transform: scale(1.1);
+}

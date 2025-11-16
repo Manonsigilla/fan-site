@@ -1,0 +1,64 @@
+body {
+    background: linear-gradient(135deg, var(--color-om-blue) 0%, oklch(50% 0.12 237.44) 100%);
+    color: var(--color-white);
+}
+main {
+    padding: 2rem 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+main h2 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--color-om-gold);
+    animation: fadeInDown 0.8s ease-out;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--color-om-gold);
+    margin-bottom: var(--space-large);
+    text-align: center;
+}
+
+main > p {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+/* Tablettes */
+@media (min-width: 768px) {
+    main {
+        padding: 3rem 2rem;
+    }
+
+    main h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    main {
+        padding: 4rem 3rem;
+    }
+
+    main h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    main > p {
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+    }
+}

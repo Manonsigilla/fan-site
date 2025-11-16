@@ -1,0 +1,27 @@
+:root {
+    /* Couleurs officielles de l'Olympique de Marseille */
+    --color-om-blue: oklch(64.14% 0.14096247183780242 237.44293354297707);
+    --color-om-gold: oklch(73.26% 0.102 86.07);
+    --color-om-gold-dark: oklch(50.2% 0.102 86.07);
+
+    /* Couleurs de base */
+    --color-white: oklch(100% 3.5594404092893915e-8 106.37411396324427);
+    --color-black: oklch(31.7% 0.102 86.07);
+
+    /* Polices de caractères */
+    --font-primary: 'Poppins', sans-serif;      /* Titres */
+    --font-secondary: 'Montserrat', sans-serif; /* Navigation */
+    
+    /* Taille du menu burger */
+    --burger-menu-radius: 4em;
+
+    /* Espacements */
+    --space-xxsmall: 0.15rem;
+    --space-xsmall: 0.25rem;
+    --space-small: 0.5rem;
+    --space-medium: 1rem;
+    --space-xmedium: 1.3rem;
+    --space-large: 1.5rem;
+    --space-xlarge: 2rem;
+    --space-xxlarge: 5rem;
+}

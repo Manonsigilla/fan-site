@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Mandanda-onglets/css/mandanda-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Fan Page Mandanda biographie</title>
+</head>
+<body>
+    <header>
+        <!-- ============================================
+        Container pour le burger et le titre (mobile)
+        ============================================ -->
+        <div class="header-top">
+            <!-- Bouton burger : visible uniquement sur mobile (< 768px) -->
+            <button class="burger-menu" aria-label="Menu" aria-expanded="false">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </button>
+
+            <!-- Logo : visible uniquement sur mobile (<768px) -->
+            <a href="/Index.html" class="logo-mobile">
+                <img src="/images/Image_20251106_131302_815.png" alt="logo OM">
+            </a>
+            
+            <!-- Titre principal de la page -->
+            <h1>FanPage OM dédié à Steve Mandanda</h1>
+        </div>
+        
+        <!-- ============================================
+        Menu overlay : s'affiche en plein écran sur mobile
+        ============================================ -->
+        <div class="menu-overlay">
+            <div class="menu-overlay-inner">
+                <ul class="menu-overlay-nav">
+                    <li class="menu-overlay-item">
+                        <a class="menu-overlay-link" href="/Mandanda-onglets/index.html">
+                            <span><div>Accueil</div></span>
+                        </a>
+                    </li>
+                    <li class="menu-overlay-item">
+                        <a class="menu-overlay-link" href="/Mandanda-onglets/actualite.html">
+                            <span><div>Actualité</div></span>
+                        </a>
+                    </li>
+                    <li class="menu-overlay-item">
+                        <a class="menu-overlay-link" href="/Mandanda-onglets/biographie.html">
+                            <span><div>Biographie</div></span>
+                        </a>
+                    </li>
+                    <li class="menu-overlay-item">
+                        <a class="menu-overlay-link" href="/Mandanda-onglets/galerie.html">
+                            <span><div>Galerie</div></span>
+                        </a>
+                    </li>
+                    <li class="menu-overlay-item">
+                        <a class="menu-overlay-link" href="/Mandanda-onglets/merchandising.html">
+                            <span><div>Merchandising</div></span>
+                        </a>
+                    </li>
+                    <li class="menu-overlay-item">
+                        <a class="menu-overlay-link" href="/Mandanda-onglets/contact.html">
+                            <span><div>Contact</div></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- ============================================
+        Navigation desktop : visible uniquement > 768px
+        ============================================ -->
+        <nav>
+            <!-- Logo OM cliquable -->
+            <a href="/Index.html" class="logo">
+                <img src="/images/Image_20251106_131302_815.png" alt="logo OM">
+            </a>
+            
+            <!-- Liste des liens de navigation -->
+            <ul>
+                <li><a href="/Mandanda-onglets/index.html">Accueil</a></li>
+                <li><a href="/Mandanda-onglets/actualite.html">Actualité</a></li>
+                <li><a href="/Mandanda-onglets/biographie.html">Biographie</a></li>
+                <li><a href="/Mandanda-onglets/galerie.html">Galerie</a></li>
+                <li><a href="/Mandanda-onglets/merchandising.html">Merchandising</a></li>
+                <li><a href="/Mandanda-onglets/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- En-tête de la page -->
+        <div id="headline">
+            <h1>La Carrière de <br><span class="important">Steve Mandanda</span></h1>
+        </div>
+
+        <!-- Conteneur de la timeline -->
+        <div id="timeline"></div>
+
+    </main>
+    <footer>
+        <nav>
+            <!-- Logo OM cliquable -->
+            <a href="/Index.html" class="logo-footer">
+                <img src="/images/Image_20251106_131302_815.png" alt="logo OM">
+            </a>
+            
+            <!-- Liste des liens de navigation -->
+            <ul>
+                <li><a href="/Mandanda-onglets/index.html">Accueil</a></li>
+                <li><a href="/Mandanda-onglets/actualite.html">Actualité</a></li>
+                <li><a href="/Mandanda-onglets/biographie.html">Biographie</a></li>
+                <li><a href="/Mandanda-onglets/galerie.html">Galerie</a></li>
+                <li><a href="/Mandanda-onglets/merchandising.html">Merchandising</a></li>
+                <li><a href="/Mandanda-onglets/contact.html">Contact</a></li>
+            </ul>
+
+        </nav>
+
+    </footer>
+    <script>
+        /* =====================================
+        Script JavaScript pour gérer le menu burger
+        ===================================== */
+        // Récupération des éléments du DOM
+        const burgerMenu = document.querySelector('.burger-menu');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        const body = document.body;
+
+        // Fonction pour ouvrir/fermer le menu
+        burgerMenu.addEventListener('click', function() {
+            // Toggle (basculer) la classe 'active' sur le burger et l'overlay
+            burgerMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            
+            // Empêcher le scroll du body quand le menu est ouvert
+            body.classList.toggle('menu-open');
+            
+            // Accessibilité : mise à jour de l'attribut aria-expanded
+            const isExpanded = burgerMenu.classList.contains('active');
+            burgerMenu.setAttribute('aria-expanded', isExpanded);
+        });
+
+        // Fermer le menu quand on clique sur un lien (optionnel)
+        const menuLinks = document.querySelectorAll('.menu-overlay-link');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                burgerMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                body.classList.remove('menu-open');
+                burgerMenu.setAttribute('aria-expanded', 'false');
+            });
+        });
+        /* =====================================
+        DONNÉES DES ÉVÉNEMENTS DE LA TIMELINE
+        ===================================== */
+        // Tableau contenant tous les événements de la carrière de Steve Mandanda
+        const events = [
+            {
+                time: "1985",
+                icon: 'debut',
+                headline: 'Naissance et <span class="important">Débuts</span>',
+                paragraphs: [
+                    '<h3>Les origines</h3>',
+                    'Steve Mandanda est né le 28 mars 1985 à <span class="important">Kinshasa</span>, en République démocratique du Congo.',
+                ]
+            },
+            {
+                time: "1995",
+                icon: 'om',
+                headline: 'Commence au club des jeunes à l\'ALM Évreux',
+                paragraphs: [
+                    '<h3>Le commencement</h3>',
+                    'Mandanda commence sa carrière de footballeur dans le club des jeunes de l\'ALM Évreux à l\'âge de 10 ans.',
+                    'Il y développe ses compétences de gardien de but et attire l\'attention des recruteurs.'
+                ]
+            },
+            {
+                time: "2000",
+                icon: 'trophee',
+                headline: 'Premier gros tremplin',
+                paragraphs: [
+                    '<h3>Le Havre</h3>',
+                    'De 2000 à 2005, Steve Mandanda rejoint le centre de formation du <span class="important">Havre AC</span>.',
+                    'Il fait ses débuts professionnels en 2005 et impressionne par ses performances, remportant le <span class="important">Trophée du meilleur gardien de Ligue 2</span> cette année-là.'
+                ]
+            },
+            {
+                time: "2007",
+                icon: 'france',
+                headline: 'OM',
+                paragraphs: [
+                    '<h3>Arrivée à l\'OM</h3>',
+                    'En 2007, Mandanda signe avec l\'<span class="important">Olympique de Marseille (OM)</span>, son club de cœur.',
+                    'Il devient rapidement le gardien titulaire.'
+                ]
+            },
+            {
+                time: "2008",
+                icon: 'france',
+                headline: 'équipe de France et le Havre',
+                paragraphs: [
+                    '<h3>Équipe de France et prêt au Havre</h3>',
+                    'Steve Mandanda fait ses débuts en équipe de France en 2008 lors d\'un match amical contre l\'Uruguay.',
+                    'Il participe à plusieurs compétitions internationales avec les Bleus, y compris la Coupe du Monde 2010 et l\'Euro 2012.',
+                    'En parallèle, il est prêté au <span class="important">Havre AC</span> pour la saison 2008-2009 afin de gagner du temps de jeu.'
+                ]
+            },
+            {
+                time: "2010",
+                icon: 'om',
+                headline: 'Coupe de la Ligue',
+                paragraphs: [
+                    '<h3>Coupe de la Ligue</h3>',
+                    'En 2010, Mandanda remporte la <span class="important">Coupe de la Ligue</span> avec l\'OM, marquant un moment fort de sa carrière.',
+                    'Il est également nommé <span class="important">Meilleur Gardien de Ligue 1</span> cette année-là.'
+                ]
+            },
+            {
+                time: "2011",
+                icon: 'om',
+                headline: 'Coupe de la ligue et gardien de la saison',
+                paragraphs: [
+                    '<h3>Deuxième Coupe de la Ligue</h3>',
+                    'En 2011, Steve Mandanda remporte à nouveau la <span class="important">Coupe de la Ligue</span> avec l\'OM.',
+                    'Il est également honoré du titre de <span class="important">Meilleur Gardien de Ligue 1</span> pour la deuxième fois'
+                ]
+            },
+            {
+                time: "2013",
+                icon: 'om',
+                headline: 'Titre de champion de France',
+                paragraphs: [
+                    '<h3>Titre de champion de France</h3>',
+                    'En 2013, Mandanda joue un rôle clé dans la conquête du <span class="important">titre de champion de France</span> par l\'OM, mettant fin à une longue attente pour le club.',
+                    'Il est une figure emblématique de l\'équipe et un leader sur le terrain.'
+                ]
+            },
+            {
+                time: "2016",
+                icon: 'angleterre',
+                headline: 'Crystal Palace',
+                paragraphs: [
+                    '<h3>Expérience en Premier League</h3>',
+                    'En 2016, Steve Mandanda fait le saut vers la Premier League anglaise en signant avec <span class="important">Crystal Palace</span>.',
+                    'Il y passe une saison avant de retourner à l\'OM en 2017.'
+                ]
+            },
+            {
+                time: "2018",
+                icon: 'france',
+                headline: 'Coupe du Monde 2018',
+                paragraphs: [
+                    '<h3>Champion du Monde</h3>',
+                    'Mandanda est sélectionné pour faire partie de l\'équipe de France qui remporte la <span class="important">Coupe du Monde 2018</span> en Russie.',
+                    'Bien qu\'il ne joue pas de match, il contribue au succès de l\'équipe en tant que gardien remplaçant.'
+                ]
+            },
+            {
+                time: "2021",
+                icon: 'om',
+                headline: 'Retour à l\'OM et records',
+                paragraphs: [
+                    '<h3>Retour à l\'OM</h3>',
+                    'De retour à l\'OM, Mandanda continue d\'écrire son histoire avec le club.',
+                    'En 2021, il devient le joueur ayant disputé le plus de matchs avec l\'OM, dépassant le record précédent.'
+                ]
+            },
+            {
+                time: "2023",
+                icon: 'om',
+                headline: 'Légende vivante de l\'OM',
+                paragraphs: [
+                    '<h3>Légende vivante</h3>',
+                    'En 2023, Steve Mandanda est reconnu comme une légende vivante de l\'Olympique de Marseille.',
+                    'Avec plus de 600 apparitions pour le club, il reste un pilier de l\'équipe et un modèle pour les jeunes joueurs.'
+                ]
+            },
+            {
+                time: "2025",
+                icon: 'om',
+                headline: 'Fin de carrière et héritage',
+                paragraphs: [
+                    '<h3>Fin de carrière</h3>',
+                    'Alors que Steve Mandanda approche de la fin de sa carrière professionnelle, il est célébré pour son héritage durable à l\'OM et dans le football français.',
+                    'Il est prévu qu\'il prenne sa retraite à la fin de la saison 2024-2025, laissant derrière lui une carrière remarquable.'
+                ]
+            }
+        ];
+
+        /* =====================================
+        FONCTIONS DE CRÉATION DES ÉLÉMENTS
+        ===================================== */
+        
+        /**
+         * Crée un élément div avec une classe CSS
+         * @param {string} className - La classe CSS à appliquer
+         * @returns {HTMLElement} L'élément div créé
+         */
+        const createDIV = (className) => {
+            const div = document.createElement("div");
+            div.classList = className;
+            return div;
+        };
+
+        /**
+         * Crée un élément d'événement complet pour la timeline
+         * @param {string} time - La date de l'événement
+         * @param {string} headline - Le titre de l'événement
+         * @param {Array} paragraphs - Les paragraphes de contenu
+         * @param {string} icon - La classe d'icône (optionnelle)
+         * @returns {HTMLElement} L'élément événement complet
+         */
+        const createEventElement = (time, headline, paragraphs, icon) => {
+            // Création de la structure HTML de l'événement
+            const event = createDIV("event");
+            const eventContent = createDIV("event__content");
+            const eventWrapper = createDIV("event__wrapper");
+            const eventHeadline = createDIV("event__headline");
+            const eventText = createDIV("event__text");
+
+            // Ajout de tous les paragraphes de contenu
+            for (const para of paragraphs) {
+                const pg = document.createElement("p");
+                pg.innerHTML = para; // innerHTML permet d'inclure du HTML dans le texte
+                eventText.append(pg);
+            }
+            
+            // Ajout de la classe d'icône si elle est fournie
+            if (icon != null) {
+                event.classList.add(icon);
+            }
+
+            // Attribution de la date comme attribut data
+            event.dataset.time = time;
+            
+            // Insertion du titre
+            eventHeadline.innerHTML = headline;
+            
+            // Assemblage de tous les éléments
+            eventContent.append(eventHeadline, eventText);
+            eventWrapper.append(eventContent);
+            event.append(eventWrapper);
+            
+            return event;
+        };
+
+        /* =====================================
+        INITIALISATION DE LA TIMELINE
+        ===================================== */
+        
+        /**
+         * Fonction principale qui génère tous les événements
+         * S'exécute immédiatement au chargement de la page
+         */
+        (() => {
+            const timeline = document.getElementById("timeline");
+            
+            // Parcours de tous les événements et création des éléments HTML
+            for (const event of events) {
+                const newEvent = createEventElement(
+                    event.time,
+                    event.headline,
+                    event.paragraphs,
+                    event.icon
+                );
+                timeline.append(newEvent);
+            }
+        })();
+
+    </script>
+</body>
+</html>
